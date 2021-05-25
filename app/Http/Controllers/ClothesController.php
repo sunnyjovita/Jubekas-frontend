@@ -21,6 +21,7 @@ class ClothesController extends Controller
     public function details($id){
     	// return Clothes::find($id);
     	$clothesdetails = Clothes::find($id);
+        // hehehe
     	return view('detailsClothes', ['clothes'=>$clothesdetails]);
     }
 
