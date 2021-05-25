@@ -69,39 +69,58 @@
     </section>
 
 <!--footer-->
-    <div class="footer">
+    <footer class="site-footer">
       <div class="container">
-          <div class="row">
-                  <div class="footer_about">
-                      <div class="footer_logo">
-                          <a href="/">JUBEKAS</a>
-                      </div>
-                      <p>Why do we use it?
-                        It is a long established fact that a reader will be distracted by the reooking at its layout.
-                        The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letter.</p>
-                        <div class="footer_social">
-                            <a href="#">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fa fa-linkedin"></i>
-                            </a>
-                        </div>
-                     </div>
-                </div>
-            </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
           </div>
-<div class="footer_bottom">
-    <p>
-        Copyright &copy; 2021 JUBEKAS. All rights reserved.
-    </p>
-</div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Categories</h6>
+            <ul class="footer-links">
+              <li><a href="#">Clothes</a></li>
+              <li><a href="#">Furniture</a></li>
+              <li><a href="#">Electornics</a></li>
+              <!-- <li><a href="#">Java</a></li>
+              <li><a href="#">Android</a></li>
+              <li><a href="#">Templates</a></li> -->
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Categories</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <!-- <li><a href="#">Sitemap</a></li> -->
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by 
+         <a href="#">Jubekas</a>.
+            </p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="github" href="#"><i class="fa fa-github"></i></a></li>
+              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+          </div>
+        </div>
+      </div>
+</footer>
 
 
 
