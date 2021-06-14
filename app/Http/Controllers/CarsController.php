@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+// call api from backend Jubekas2
+use Illuminate\Support\Facades\Http;
+use GuzzleHttp\Client;
+
 use Illuminate\Http\Request;
 use App\Models\Cars;
 use App\Models\Clothes;
@@ -16,28 +20,53 @@ class CarsController extends Controller
      */
     public function cars()
     {
-        //
-       $cars = Cars::all();
-        return view('cars', ['cars'=>$cars]);   
+
+        $cars = Http::get('http://127.0.0.1:8000/api/cars')->json();
+        return view('cars',['cars'=>$cars]);
     }
 
+
     public function details($id){
-        // return Clothes::find($id);
-        $carsdetails = Cars::find($id);
-        return view('detailsCars', ['cars'=>$carsdetails]);
+
+        // $carsdetails = Http::get('http://127.0.0.1:8000/api/cars/details/'.$id);
+        $carsdetails = Http::get("http://127.0.0.1:8000/api/cars/details/$id");
+        $result = json_decode((string)$carsdetails->getBody(), true);
+        // return $result;
+        // dd($result);
+        return view('detailsCars', ['cars' =>$carsdetails]);
+        // return redirect('detailsCars', ['cars'=>$carsdetails]);
     }
     
     public function search(Request $req){
-        // return $req->input();
-        $carsSearch = Cars::where('title', 'like', '%'.$req->input('query').'%')->get(); 
-        $clothesSearch = Clothes::where('title', 'like', '%'.$req->input('query').'%')->get();
-        return view('search', ['cars'=>$carsSearch, 'clothes'=>$clothesSearch]);
+
+        
+        $data = $req->input();
+        // dd($data);
+        $input = $data['query'];
+
+        $response = Http::get("http://127.0.0.1:8000/api/search?query=$input");
+
+        $result = json_decode((string)$response->getBody(), true);
+        // return $response;
+        // dd($result['cars']);
+        session()->put([
+             'cars' => $result['cars'],
+            'clothes' => $result['clothes'],
+             // 'phoneNumber' => $result['phoneNumber'],
+              // 'email' => $result['email'],
+
+        ]);
+
+        return view('search', ['cars'=>session('cars'), 'clothes'=>session('clothes')]);
+        // return view('search');
 
     }
 
 
     static function chatSeller(Request $req){
-        if($req->session()->has('user')){
+
+        // Session::put('name');
+        if(Session::has('email')){
             return "Hello this is chat seller page";
         }
         else{

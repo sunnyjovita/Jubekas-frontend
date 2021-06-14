@@ -65,6 +65,8 @@ function visibility() {
 
       function validatePassword(fld, fld2, name, em, phone){
         var error = "";
+        var illegal_phoneNumber = /^08[0-9].*$/;
+        // var illegal_phoneNumber = /(^62[0-9].*$)/;
         // var illegalChars = /[\W_]/; // allow only letters and numbers
         if(name.value == ""){
           error = "you didnt enter the name.\n"
@@ -82,10 +84,10 @@ function visibility() {
           error = "the password is the wrong length.\n";
         }
         
-        // else if(illegalChars.test(fld.value)){
-        //   error = 'the password containes illegal characters.\n';
+        else if(illegal_phoneNumber.test(phone.value)){
+          error = 'the phone number should be started with 62.\n';
 
-        // }
+        }
         else if(fld.value != fld2.value){
           error = 'Password and confirm password are not match';
         }
@@ -99,7 +101,7 @@ function visibility() {
   {{View::make('login-register-header')}}
   <br>
 
-@if(session('error'))
+              @if(session('error'))
               <div class="alert alert-danger alert-block">
                 {{ session('error') }}
               </div>
@@ -109,7 +111,10 @@ function visibility() {
       <div class="container">
         <div class="user singupBx">
           <div class="formBx">
+
+            <!-- onsubmit= "validateFormOnSubmit(this)" -->
               <!-- <form onsubmit="return validateFormOnSubmit(this)"> -->
+            <!-- <form action="register" method="POST"> -->
             <form onsubmit= "validateFormOnSubmit(this)" action="register" method="POST">
               @csrf
 
@@ -117,6 +122,7 @@ function visibility() {
               
               <input type="text" name="name" placeholder="User Name">
               <input type="email" name="email" placeholder="Email">
+
               <input type="phonenumber" name="phoneNumber" placeholder="Phone Number">
 
               <div class="password">
@@ -183,7 +189,7 @@ function visibility() {
         Copyright &copy; 2021 JUBEKAS. All rights reserved.
     </p>
 </div> -->
- <footer class="site-footer">
+<footer class="site-footer">
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-6">
@@ -194,9 +200,13 @@ function visibility() {
           <div class="col-xs-6 col-md-3">
             <h6>Categories</h6>
             <ul class="footer-links">
+              <li><a href="#">Cars</a></li>
+              <!-- <li><a href="#">Properties</a></li> -->
               <li><a href="#">Clothes</a></li>
               <li><a href="#">Furniture</a></li>
-              <li><a href="#">Electornics</a></li>
+              <!-- <li><a href="#">Electornics</a></li> -->
+              <li><a href="#">Electronics</a></li>
+              <li><a href="#">Properties</a></li>
               <!-- <li><a href="#">Java</a></li>
               <li><a href="#">Android</a></li>
               <li><a href="#">Templates</a></li> -->
@@ -209,7 +219,7 @@ function visibility() {
               <li><a href="#">About Us</a></li>
               <li><a href="#">Contact Us</a></li>
               <li><a href="#">Categories</a></li>
-              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="privacy-policy">Privacy Policy</a></li>
               <!-- <li><a href="#">Sitemap</a></li> -->
             </ul>
           </div>
@@ -220,13 +230,13 @@ function visibility() {
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
             <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by 
-         <a href="#">Jubekas</a>.
+         <a href="/">Jubekas</a>.
             </p>
           </div>
 
           <div class="col-md-4 col-sm-6 col-xs-12">
             <ul class="social-icons">
-              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="Youtube" href="#"><i class="fa fa-youtube"></i></a></li>
               <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
               <li><a class="github" href="#"><i class="fa fa-github"></i></a></li>
               <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
@@ -235,5 +245,7 @@ function visibility() {
         </div>
       </div>
 </footer>
+
+
   </body>
 </html>

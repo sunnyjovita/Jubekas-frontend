@@ -34,7 +34,7 @@ use App\Http\Controllers\ClothesController;
                     <ul>
                         <li class="active"><a href="/">HOME</a></li>
                         <li><a href="/category">CATEGORIES</a></li>
-                        <li><a href="#">CONTACT</a></li>
+                        <li><a href="contact-use">CONTACT</a></li>
                         <li><a href="#">SELL</a></li>
                         <li><a href="#">CHAT</a></li>
                     </ul>

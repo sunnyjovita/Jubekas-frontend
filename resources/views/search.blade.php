@@ -26,9 +26,11 @@
 <div class="col-sm-4">
 <div class="trending-wrapper">
   <h3>Result for products</h3>
+
   @foreach($cars as $item)
   <div class="searched-item">
     <a href="cars/details/{{$item['id']}}">
+      <!-- <a href="#"> -->
         <img class="" src="{{$item['image']}}" style="width: 20%; height:100px;">
         <div class="">
           <h2>{{$item['title']}}</h2>
@@ -37,6 +39,7 @@
       </a>
   </div>
   @endforeach 
+
    @foreach($clothes as $item)
   <div class="searched-item">
     <a href="clothes/details/{{$item['id']}}">

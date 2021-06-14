@@ -44,7 +44,7 @@ function visibility3() {
     {{View::make('login-register-header')}}
 
 <br><br>
-             @if(session('error'))
+              @if(session('error'))
               <div class="alert alert-danger alert-block">
                 {{ session('error') }}
               </div>
@@ -57,27 +57,23 @@ function visibility3() {
 
            <img src="/web app project new/images/login.png">
 
+
         </div>
           <div class="formBx">
             <form action="login" method="POST">  
-               
-                
-
-              <h2>Sign In</h2>
+                @csrf
                
               
-
+              <h2>Sign In</h2>
               <div class="form-group">
-                @csrf
-              <input type="email" name="email" placeholder="Email" class="form-control" id="exampleinputemail">
-
+               
+              <input type="email" name="email" class="form-control" value="" placeholder="Email" id="exampleinputemail">
+              
           </div>
           <div class="form-group">
 
   <div class="password">
-  <!-- <div class="form-group" > -->
-  <input type="password" class="form-control pwd" id="login_password" placeholder="Password" name="password" required>
-  <!-- <span class="text-danger">{{$errors->first('password')}}</span> -->
+  <input type="password" class="form-control pwd" id="login_password" placeholder="Password" name="password">
      <span class="input-group-btn" id="eyeSlash">
             <button class="btn btn-default reveal" onclick="visibility3()" type="button"><i class="fa fa-eye-slash" aria-hidden="true"></i></button>
      </span>
@@ -185,8 +181,7 @@ function visibility3() {
         </div>
       </div>
 </footer>
-
-
+ 
 
   </body>
 </html>

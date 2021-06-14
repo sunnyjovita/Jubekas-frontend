@@ -78,12 +78,12 @@ window.onclick = function(event) {
 
 </head>
 <body>
-	<h2>Welcome, {{Session::get('user')['name']}}</h2>
+	<h2>Welcome, {{Session::get('name')}}</h2>
   <div class="col-sm-6">
       <a href="/">Go Back</a>
-     <h1>name: {{Session::get('user')['name']}}</h1>
-     <h1>email: {{Session::get('user')['email']}}</h1>
-     <h1>phone number: {{Session::get('user')['phoneNumber']}}</h1>
+     <h1>name: {{Session::get('name')}}</h1>
+     <h1>email: {{Session::get('email')}}</h1>
+     <h1>phone number: {{Session::get('phoneNumber')}}</h1>
     </div>
   </div>
 <br><br>
@@ -100,7 +100,7 @@ window.onclick = function(event) {
     </div>
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<!-- <button type="button" class="btn btn-primary btn-sm">Sell</button> -->
- <!-- <a href="/user-profile">{{Session::get('user')['name']}}</a>  -->
+ 
 
 </body>
 </html>

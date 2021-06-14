@@ -30,13 +30,13 @@ use App\Http\Controllers\ClothesController;
                     <ul>
                         <li class="active"><a href="/">HOME</a></li>
                         <li><a href="/category">CATEGORIES</a></li>
-                        <li><a href="#">CONTACT</a></li>
+                        <li><a href="contact-us">CONTACT</a></li>
                         <li><a href="#">SELL</a></li>
                         <li><a href="#">CHAT</a></li>
                     </ul>
                 </nav>
 
-                <form action="/search" class="navbar-form navbar-left">
+                <form action="search" class="navbar-form navbar-left">
                 <div class="input-group" style="padding-left:65px;">
 
                     <input type="search" name="query" class="form-control rounded search-box" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
@@ -48,13 +48,14 @@ use App\Http\Controllers\ClothesController;
             <br>
 
             </div>
-
-            @if(Session::has('user'))
+        
+         
+            @if(Session::has('name'))
             <div class="col-lg-3">
                 <div class="header_right">
                     <div class="header_right_auth">
-                        <!-- <a href="/{{Session::get('user')['name']}}">{{Session::get('user')['name']}}</a> -->
-                        <a href="/user-profile">{{Session::get('user')['name']}}</a>
+                       
+                        <a href="/user-profile">{{Session::get('name')}}</a>
                         <a href="/logout">Logout</a>
                     </div>
                 </div>

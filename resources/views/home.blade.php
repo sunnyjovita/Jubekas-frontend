@@ -1,32 +1,9 @@
 
-<?php
-use App\Http\Controllers\ClothesController;
-?>
 
 
 
-<!-- >br><br>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if(session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{session('status')}}
-                    </div>
-                    @endif
 
 
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
- -->
 @extends('master')
 @section('content')
 <!DOCTYPE html>
@@ -44,61 +21,12 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
 
 </head>
 <body id="content">
-<!-- <header class="header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="header_logo">
-                    <a href="">JUBEKAS</a>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <nav class="header_menu">
-                    <ul>
-                        <li class="active"><a href="">HOME</a></li>
-                        <li><a href="#">CATEGORIES</a></li>
-                        <li><a href="#">CONTACT</a></li>
-                        <li><a href="#">SELL</a></li>
-                    </ul>
-                </nav>
 
-                <form action="/search" class="navbar-form navbar-left">
-
-                 <div class="input-group">
-  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-    aria-describedby="search-addon" />
-  <button type="button" class="btn btn-outline-primary">search</button>
-</div>
-</form>
-
-
-             </div>
-
-          @if(Session::has('user'))
-            <div class="col-lg-3">
-                <div class="header_right">
-                    <div class="header_right_auth">
-                        <a href="#">{{Session::get('user')['name']}}</a>
-                        <a href="/logout">Logout</a>
-                    </div>
-                </div>
-            </div>
-            @else
-            <div class="col-lg-3">
-                <div class="header_right">
-                    <div class="header_right_auth">
-                        <a href="/login">Login</a>
-                        <a href="#">Register</a>
-                    </div>
-                </div>
-            </div>
-            @endif
-
-
-        </div>
-    </div>
-</header> -->
-
+ @if(session('success'))
+              <div class="alert alert-success alert-block">
+                {{ session('success') }}
+              </div>
+              @endif
 <section class="categories ">
     <div class="container-fluid">
         <div class="row">

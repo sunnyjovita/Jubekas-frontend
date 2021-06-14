@@ -17,6 +17,7 @@
 <body>
 
 <!-- margin = 0 (remove container) -->
+<!-- <form action="127.0.0.1:8000/api/cars" method="GET"> -->
 
 <div class="container custom-product">
   <h2>Carousel Example</h2>
@@ -33,8 +34,8 @@
 
       @foreach($cars as $item)
 
-      <div class="item {{$item['id']==5?'active':''}}">
-        <a href="cars/details/{{$item['id']}}">
+      <div class="item {{$item['id']==1?'active':''}}">
+              <a href="cars/details/{{$item['id']}}">
         <img src="{{$item['image']}}" style="display:block; margin-left:auto; margin-right: auto; width: 30%; height:300px;">
         <div class="carousel-caption">
           <h3>{{$item['title']}}</h3>
@@ -76,7 +77,7 @@
 
       <br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
-
+<!-- </form> -->
 </body>
 </html>
 

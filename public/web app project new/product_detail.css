@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*header*/
+a, a:hover, a:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+
+/*details*/
+.small-container {
+    max-width: 1080px;
+    margin:auto;
+    padding-left: 25px;
+    padding-right: 25px;
+
+}
+.single-product {
+    margin-top: 80px;
+}
+
+.single-product .col-2 img {
+    padding:0;   
+}
+
+.single-product .col-2 {
+    padding: 20px;
+}
+
+.single-product .col-2 h4 {
+    margin: 20px 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+.single-product .row {
+     display: flex;
+     align-items: center;
+     flex-wrap: wrap;
+      justify-content: space-around;
+ }
+
+ .single-product .col-2 {
+     flex-basis: 50%;
+     min-width: 300px;
+ }
+
+ .single-product .col-2 h1 {
+     font-size: 50px;
+     line-height: 60px;
+     margin: 25px 0;
+ }
+
+ .single-product .col-2 .btn { 
+    display: inline-block;
+    background: #ff523b;
+    color: #fff;
+    padding:8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;   
+    transition: background 0.5s; 
+} 
+
+.single-product .col-2 .btn:hover {
+    background: #563434;
+}
+
+.single-product .col-2 .btn:active {
+    background: #563434;
+     border-radius: 30px;  
+}
+
+
+.single-product .col-2 .btn-back {
+    display: inline-block;
+    background: blue;
+    color: #fff;
+    padding:8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;   
+    transition: background 0.5s; 
+    text-decoration: none;
+}
+
+.single-product .col-2 .btn-back:hover {
+    background: red;
+}
+

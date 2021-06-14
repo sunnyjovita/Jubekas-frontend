@@ -4,48 +4,159 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 // use App\Http\Controllers\UserController;
-use App\Models\User;
 
+use Illuminate\Support\Facades\Session;
+// call api from backend Jubekas2
+use Illuminate\Support\Facades\Http;
+use GuzzleHttp\Client;
+
+// include validator class
+use Illuminate\Support\Facades\Validator;
 
 
 class ForgotPasswordController extends Controller
 {
     //
     public function forgot(){
-    	return view('forgot-password');
+    	 if(Session::has('email')){
+            return redirect('/');
+        }else{
+            return view('forgot-password');
+
+        }
     }
 
     public function forgotPost(Request $req){
-    	// dd($req->all());
-    	return($req->all());
-    	// return redirect('/');
 
-    	// // get the email from the request input
-    	// $user = User::whereEmail($req->email)->first();
-    	// if($user == null){
-    	// 	return redirect()->back()->with(['error' => 'Email not exists']);
-    	// }
-    	// $user = Sentinel::findById($user->id);
+        $validator = Validator::make($req->all(), [
+            'email'=>['required', 'string', 'email'],
+        ]);
 
-    	// // if the user doesnt exist, we will create a reminder
-    	// $reminder = Reminder::exists($user) ?: Reminder::create($user);
-    	// // after creating a reminder, send an email to the input email address
-    	// $this->sendEmail($user, $reminder->code);
+        if($validator->fails()){
+             $req->session()->flash('error', 'Invalid Email');
+            return view('forgot-password');
+             // return redirect('login');
+        }
 
-    	// return redirect()->back()->with(['success'=>'reset code sent to your email']);
+        try{
+            
+        $http = new \GuzzleHttp\Client;
+
+        // fetch data from API
+        $email = $req->email;
+
+        $response = $http->post('http://127.0.0.1:8000/api/forgot-password?',[
+            
+            'query'=>[
+                'email'=>$email,
+
+            ]
+        ]);
+
+        $result = json_decode((string)$response->getBody(), true);
+
+        session()->put([
+            'message'=>$result['message']
+
+        ]);
+
+        // dd(session('message'));
+        // return $result;
+        if(session('message') == 'User does not exist!'){
+            $req->session()->flash('error', session('message'));
+
+        }
+        else{
+            $req->session()->flash('success', session('message'));
+        }
+        // return redirect('forgot-password');
+        return view('forgot-password');
+       
+
+
+        }
+        catch(\Exception $e){
+            $req->session()->flash('error', 'Invalid Email');
+            return view('forgot-password');
+
+            // return $e;
+
+        } 
 
     }
 
-    // public function sendEmail($user, $code){
-    // 	Mail::send(
-    // 		'email.forgot-password',
-    // 		['user' => $user, 'code' =>$code],
-    // 		function($message) use ($user){
-    // 			$message->to($user->email);
-    // 			$message->subject("$user->name", "reset your password");
 
-    // 		}
+    public function reset(Request $req, $token){
+        $validator = Validator::make($req->all(), [
+            // 'email'=>['required', 'string', 'email']
+            // 'token' => ['required'],
+            'password' => ['required', 'string', 'min:6'],
+            'ConfirmPassword' => ['required', 'string'],
+        ]);
 
-    // 	);
-    // }
+        if($validator->fails()){
+             if(empty($req->input('password')) ){
+    //     // dd('input is empty.');
+            $req->session()->flash('error', 'Invalid input');
+    //         // return view('login');
+            return view('ResetPassword');
+    } 
+        
+        else if($req->input('password') != $req->input('ConfirmPassword')){
+            $req->session()->flash('error', 'Password and confirm password are not match');
+            return view('ResetPassword');
+
+        }
+       }
+            try{
+
+                $http = new \GuzzleHttp\Client;
+
+            // // fetch data for API
+            $password = $req->password;
+            $ConfirmPassword = $req->ConfirmPassword;
+
+
+            $response = $http->post("http://127.0.0.1:8000/api/reset-password/$token?",[
+                
+                'query'=>[
+                    'password'=>$password,
+                    'ConfirmPassword'=>$ConfirmPassword
+
+                ]
+            ]);
+
+            // $response = Http::post("http://127.0.0.1:8000/api/reset-password/$token?",[
+            //     'query'=>[
+            //         'password'=>$password,
+            //         'ConfirmPassword'=>$ConfirmPassword
+            //     ]
+
+            // ]);
+
+            $result = json_decode((string)$response->getBody(), true);
+            // return $result;
+            // dd($result);
+
+            $req->session()->flash('success', 'Congratulations! Your password has been changed successfully.');
+            // return redirect('/');
+            Session::forget($token);
+            // return view('home');
+            return redirect('/');
+
+
+
+
+            }catch(\Exception $e){
+
+                 $req->session()->flash('error', 'Invalid Input');
+                return view('ResetPassword');
+
+            }
+        
+            
+
+
+
+    }
 }

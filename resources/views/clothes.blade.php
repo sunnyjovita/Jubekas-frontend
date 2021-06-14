@@ -38,6 +38,7 @@
         <img src="{{$item['image']}}" style="display:block; margin-left:auto; margin-right: auto; width: 30%; height:300px;">
         <div class="carousel-caption">
           <h3>{{$item['title']}}</h3>
+          
           <p>{{$item['condition']}}</p>
           <p>{{$item['price']}}</p>
         </div>

@@ -6,6 +6,10 @@ namespace App\Http\Controllers;
 // import database clothes
 use App\Models\Clothes;
 
+// call api from backend Jubekas2
+use Illuminate\Support\Facades\Http;
+use GuzzleHttp\Client;
+
 use Illuminate\Http\Request;
 use Session;
 
@@ -13,16 +17,23 @@ class ClothesController extends Controller
 {
     //
     public function clothes(){
-    	$clothes = Clothes::all();
-    	return view('clothes', ['clothes'=>$clothes]);
+    	// $clothes = Clothes::all();
+    	// return view('clothes', ['clothes'=>$clothes]);
+        $clothes = Http::get('http://127.0.0.1:8000/api/clothes')->json();
+        return view('clothes',['clothes'=>$clothes]);
     }
 
 
     public function details($id){
+        $clothesdetails = Http::get('http://127.0.0.1:8000/api/clothes/details/'.$id);
+        $result = json_decode((string)$clothesdetails->getBody(), true);
+        // return $result;
+        return view('detailsClothes', ['clothes' =>$clothesdetails]);
+
     	// return Clothes::find($id);
-    	$clothesdetails = Clothes::find($id);
+    	// $clothesdetails = Clothes::find($id);
         // hehehe
-    	return view('detailsClothes', ['clothes'=>$clothesdetails]);
+    	// return view('detailsClothes', ['clothes'=>$clothesdetails]);
     }
 
     // public function search(Request $req){
@@ -34,7 +45,7 @@ class ClothesController extends Controller
 
 
     static function chatSeller(Request $req){
-        if($req->session()->has('user')){
+        if(Session::has('email')){
             return "Hello this is chat seller page";
         }
         else{
