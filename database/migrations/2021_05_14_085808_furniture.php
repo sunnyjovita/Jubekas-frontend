@@ -14,7 +14,17 @@ class Furniture extends Migration
     public function up()
     {
         //// create the table
-        Schema::create('furniture', function (Blueprint $table){
+        // Schema::create('furniture', function (Blueprint $table){
+        //     $table->increments('id');
+        //     $table->string('title');
+        //     $table->string('type');
+        //     $table->string('condition');
+        //     $table->decimal('price',9,0);
+        //     $table->longText('description');  
+        //     $table->string('image');
+        // });
+
+        Schema::connection('mysql2')->create('furniture', function (Blueprint $table){
             $table->increments('id');
             $table->string('title');
             $table->string('type');

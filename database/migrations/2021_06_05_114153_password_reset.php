@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class User extends Migration
+class PasswordReset extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +14,12 @@ class User extends Migration
     public function up()
     {
         //
-          Schema::create('user', function (Blueprint $table){
+         Schema::create('password_reset', function (Blueprint $table){
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('phoneNumber');
-            $table->string('password');
+            $table->string('email');
+            // $table->string('email')->unique();
+            $table->string('token');
+            // $table->string('password');
         });
     }
 

@@ -13,16 +13,19 @@ class ClothesController extends Controller
 {
     //
     public function clothes(){
-    	$clothes = Clothes::all();
-    	return view('clothes', ['clothes'=>$clothes]);
+         $clothes = Clothes::all();
+        return response()->json($clothes);
+    	// $clothes = Clothes::all();
+    	// return view('clothes', ['clothes'=>$clothes]);
     }
 
 
     public function details($id){
+         $clothesdetails = Clothes::find($id);
+        return response()->json($clothesdetails);
     	// return Clothes::find($id);
-    	$clothesdetails = Clothes::find($id);
-        // hehehe
-    	return view('detailsClothes', ['clothes'=>$clothesdetails]);
+    	// $clothesdetails = Clothes::find($id);
+    	// return view('detailsClothes', ['clothes'=>$clothesdetails]);
     }
 
     // public function search(Request $req){
@@ -34,12 +37,12 @@ class ClothesController extends Controller
 
 
     static function chatSeller(Request $req){
-        if($req->session()->has('user')){
-            return "Hello this is chat seller page";
-        }
-        else{
-            return redirect('/login');
-        }
+        // if($req->session()->has('user')){
+        //     return "Hello this is chat seller page";
+        // }
+        // else{
+        //     return redirect('/login');
+        // }
     }
 
     // public function chat(){

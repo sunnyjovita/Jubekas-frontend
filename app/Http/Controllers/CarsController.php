@@ -17,32 +17,66 @@ class CarsController extends Controller
     public function cars()
     {
         //
-       $cars = Cars::all();
-        return view('cars', ['cars'=>$cars]);   
+       // $cars = Cars::all();
+        // return view('cars', ['cars'=>$cars]);  
+
+        // api
+        $cars = Cars::all();
+        // return $cars;
+        return response()->json($cars);
+        // return ['cars'=>$cars];
+        // return response()->json([
+            // 'cars' => $cars
+        // ]);
     }
 
     public function details($id){
-        // return Clothes::find($id);
+        
+        // $carsdetails = Cars::find($id);
+        // return view('detailsCars', ['cars'=>$carsdetails]);
+
+
+        // api
         $carsdetails = Cars::find($id);
-        return view('detailsCars', ['cars'=>$carsdetails]);
+        return response()->json($carsdetails);
+        // return Cars::find($id);
     }
     
     public function search(Request $req){
         // return $req->input();
         $carsSearch = Cars::where('title', 'like', '%'.$req->input('query').'%')->get(); 
         $clothesSearch = Clothes::where('title', 'like', '%'.$req->input('query').'%')->get();
-        return view('search', ['cars'=>$carsSearch, 'clothes'=>$clothesSearch]);
+
+        // return view('search', ['cars'=>$carsSearch, 'clothes'=>$clothesSearch]);
+
+        // api
+            // dd($response);
+        // return response()->json([$carsSearch, $clothesSearch]);
+        $response = [
+            'cars'=>$carsSearch,
+            'clothes'=>$clothesSearch
+
+        ];
+        return response()->json($response);
+        // return response()->json(['cars'=>$carsSearch, 'clothes'=>$clothesSearch]);
 
     }
 
+    // public function search($title){
+    //     $carsSearch = Cars::where('title', 'like', '%'.$title.'%')->get(); 
+    //     $clothesSearch = Clothes::where('title', 'like', '%'.$title.'%')->get();
+
+    //     return response()->json([$carsSearch, $clothesSearch]); 
+    // }
+
 
     static function chatSeller(Request $req){
-        if($req->session()->has('user')){
-            return "Hello this is chat seller page";
-        }
-        else{
-            return redirect('/login');
-        }
+        // if($req->session()->has('user')){
+        //     return "Hello this is chat seller page";
+        // }
+        // else{
+        //     return redirect('/login');
+        // }
     }
 
     /**
