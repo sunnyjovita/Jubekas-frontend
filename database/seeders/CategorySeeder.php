@@ -23,7 +23,18 @@ class CategorySeeder extends Seeder
         	[
         		'name'=>'Furniture'
 
-        	]
+        	],
+            [
+                'name'=>'Electronics'
+            ],
+
+            [
+                'name'=>'Cars'
+            ],
+
+            [
+                'name'=>'Properties'
+            ]
         	
         ]);
     }

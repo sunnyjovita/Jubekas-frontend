@@ -20,13 +20,29 @@ class CarsController extends Controller
      */
     public function cars()
     {
+<<<<<<< HEAD
 
         $cars = Http::get('http://127.0.0.1:8000/api/cars')->json();
         return view('cars',['cars'=>$cars]);
+=======
+        //
+       // $cars = Cars::all();
+        // return view('cars', ['cars'=>$cars]);  
+
+        // api
+        $cars = Cars::all();
+        // return $cars;
+        return response()->json($cars);
+        // return ['cars'=>$cars];
+        // return response()->json([
+            // 'cars' => $cars
+        // ]);
+>>>>>>> 3e0eea19f2539c6ebd18b5319c159eee682a6667
     }
 
 
     public function details($id){
+<<<<<<< HEAD
 
         // $carsdetails = Http::get('http://127.0.0.1:8000/api/cars/details/'.$id);
         $carsdetails = Http::get("http://127.0.0.1:8000/api/cars/details/$id");
@@ -59,11 +75,49 @@ class CarsController extends Controller
 
         return view('search', ['cars'=>session('cars'), 'clothes'=>session('clothes')]);
         // return view('search');
+=======
+        
+        // $carsdetails = Cars::find($id);
+        // return view('detailsCars', ['cars'=>$carsdetails]);
+
+
+        // api
+        $carsdetails = Cars::find($id);
+        return response()->json($carsdetails);
+        // return Cars::find($id);
+    }
+    
+    public function search(Request $req){
+        // return $req->input();
+        $carsSearch = Cars::where('title', 'like', '%'.$req->input('query').'%')->get(); 
+        $clothesSearch = Clothes::where('title', 'like', '%'.$req->input('query').'%')->get();
+
+        // return view('search', ['cars'=>$carsSearch, 'clothes'=>$clothesSearch]);
+
+        // api
+            // dd($response);
+        // return response()->json([$carsSearch, $clothesSearch]);
+        $response = [
+            'cars'=>$carsSearch,
+            'clothes'=>$clothesSearch
+
+        ];
+        return response()->json($response);
+        // return response()->json(['cars'=>$carsSearch, 'clothes'=>$clothesSearch]);
+>>>>>>> 3e0eea19f2539c6ebd18b5319c159eee682a6667
 
     }
 
+    // public function search($title){
+    //     $carsSearch = Cars::where('title', 'like', '%'.$title.'%')->get(); 
+    //     $clothesSearch = Clothes::where('title', 'like', '%'.$title.'%')->get();
+
+    //     return response()->json([$carsSearch, $clothesSearch]); 
+    // }
+
 
     static function chatSeller(Request $req){
+<<<<<<< HEAD
 
         // Session::put('name');
         if(Session::has('email')){
@@ -72,6 +126,14 @@ class CarsController extends Controller
         else{
             return redirect('/login');
         }
+=======
+        // if($req->session()->has('user')){
+        //     return "Hello this is chat seller page";
+        // }
+        // else{
+        //     return redirect('/login');
+        // }
+>>>>>>> 3e0eea19f2539c6ebd18b5319c159eee682a6667
     }
 
     /**

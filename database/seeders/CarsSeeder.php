@@ -26,6 +26,7 @@ class CarsSeeder extends Seeder
 	        	'price'=>'150000000',
 	        	'description'=>'color: silver',
 	        	'image'=>"/web app project new/images/fashion.jpg",
+                'location'=>'Jakarta',
 	        	'categories'=>'3'
 
         	],
@@ -38,9 +39,23 @@ class CarsSeeder extends Seeder
 	        	'price'=>'300000000',
 	        	'description'=>'color: white',
 	        	'image'=>"/web app project new/images/fashion.jpg",
+                'location'=>'Bandung',
 	        	'categories'=>'3'
 
         	],
+            [
+                'title'=>'Expander 2018',
+                'brand'=>'Mitsubishi',
+                'year'=>'2018',
+                'distance'=>'5.000-10.000',
+                'condition'=>'used',
+                'price'=>'200000000',
+                'description'=>'color: grey',
+                'image'=>"/web app project new/images/fashion.jpg",
+                'location'=>'Bekasi',
+                'categories'=>'3'
+
+            ]
            
 
         	

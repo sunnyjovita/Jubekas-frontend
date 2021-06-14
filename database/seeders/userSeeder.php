@@ -22,11 +22,20 @@ class userSeeder extends Seeder
     {
         //
         DB::table('user')->insert([
+
+            [
         	'name'=>'Sunny Jovita',
         	'email'=>'sunnyjovitaaa@gmail.com',
         	'phoneNumber'=>'8787812',
         	'password'=>Hash::make('Sj123456')
 
-        ]);
+        ],
+         [
+            'name'=>'Danka Winata',
+            'email'=>'dankawinata@gmail.com',
+            'phoneNumber'=>'08118989353',
+            'password'=>Hash::make('Sj123456')
+
+        ]]);
     }
 }

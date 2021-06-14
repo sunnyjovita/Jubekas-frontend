@@ -15,14 +15,17 @@ class Clothes extends Migration
     {
         //
          // create the table
-        Schema::create('clothes', function (Blueprint $table){
+        Schema::connection('mysql2')->create('clothes', function (Blueprint $table){
             $table->increments('id');
             $table->string('title');
             $table->string('type');
             $table->string('condition');
             $table->decimal('price',9,0);
             $table->longText('description');
-            $table->string('image');  
+            $table->string('location');
+            $table->string('image'); 
+            $table->unsignedBigInteger('categories');
+            $table->foreign('categories')->references('id')->on('categories'); 
         });
     }
 

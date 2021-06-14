@@ -13,7 +13,26 @@ class CreateCarsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cars', function (Blueprint $table) {
+
+       
+        // Schema::create('cars', function (Blueprint $table) {
+        //     $table->increments('id');
+        //     $table->string('title');
+        //     $table->string('brand');
+        //     $table->integer('year');
+        //     $table->string('distance');
+        //     $table->enum('condition',['new', 'used']);
+        //     $table->decimal('price',13,0);
+        //     $table->longText('description');
+        //     $table->string('image');
+        //     $table->string('location');
+        //     $table->unsignedBigInteger('categories');
+        //     $table->foreign('categories')->references('id')->on('categories');
+
+            
+        // });
+
+        Schema::connection('mysql2')->create('cars', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
             $table->string('brand');
@@ -23,8 +42,8 @@ class CreateCarsTable extends Migration
             $table->decimal('price',13,0);
             $table->longText('description');
             $table->string('image');
+            $table->string('location');
             $table->unsignedBigInteger('categories');
-
             $table->foreign('categories')->references('id')->on('categories');
 
             
