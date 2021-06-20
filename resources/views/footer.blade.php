@@ -18,17 +18,19 @@
         <div class="row">
           <div class="col-sm-12 col-md-6">
             <h6>About</h6>
-            <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+            <p class="text-justify">Established in 2021, Jubekas is an online marketplace specializes in buying and selling second-hand items which is devoted to bringing together sellers and enthusiasts of used goods. Users can explore and buy various kinds of used goods that are no longer used by sellers, as well as put listings to sell their own goods. 
+Jubekas was founded by three partners, namely Sunny Jovita, Calvin Scorpiano Halim, and Christensen Mario Frans for their college project at Bina Nusantara University.
+</p>
           </div>
 
           <div class="col-xs-6 col-md-3">
             <h6>Categories</h6>
             <ul class="footer-links">
-              <li><a href="clothes">Clothes</a></li>
-              <li><a href="#">Furniture</a></li>
-              <li><a href="cars">Cars</a></li>
-              <li><a href="#">Electronics</a></li>
-              <li><a href="#">Properties</a></li>
+              <li><a href="/cars">Cars</a></li>
+              <li><a href="/clothes">Clothes</a></li>
+              <li><a href="/electronics">Electronics</a></li>
+              <li><a href="/furniture">Furniture</a></li>
+              <li><a href="/property">Properties</a></li>
 
         
     <!-- <a href="#">Link 2</a> -->

@@ -45,7 +45,7 @@
 
       @foreach($cars as $item)
 
-      <div class="item {{$item['id']==107?'active':''}}">
+      <div class="item {{$item['id']==114?'active':''}}">
               <a href="cars/details/{{$item['id']}}">
         <img src="{{ asset('storage/'.$item['image']) }}" style="display:block; margin-left:auto; margin-right: auto; width: 30%; height:300px;">
         <div class="carousel-caption">

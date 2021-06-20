@@ -86,13 +86,14 @@ class ContactController extends Controller
             ]
         ]);
         }
-        // return redirect('forgot-password');
-        return view('home');
-       
+
+        
+        return view('contact.contact-us', ['name'=>session('name'), 'message'=>session('message')]);       
 
 
         }
         catch(\Exception $e){
+            // return $e;
             $req->session()->flash('error', 'Invalid Input');
             return view('contact.contact-us');
 

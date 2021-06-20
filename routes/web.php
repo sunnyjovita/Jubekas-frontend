@@ -60,14 +60,6 @@ return view('ResetPassword');
 
 });
 
-// Route::get('login',[UserController::class, 'login']);
-// Route::get('/login', function () {
-// 	// return "Sunny";
-// 	// $array = ["Sunny", "Danka"];
-//     // return $array;
-//     return view('login');
-// });
-
 
 Route::post('reset-password/{token}', [ForgotPasswordController::class, 'reset']);
 
@@ -75,25 +67,12 @@ Route::post('reset-password/{token}', [ForgotPasswordController::class, 'reset']
 
 Route::get('register', [UserController::class, 'register_authen']);
 
-// Route::get('/register', function(){
-// 	return view('register');
-// });
-
-// Route::get('/main', [Main::class, 'index']);
 
 Route::get('/', [HomeController::class, 'homepage']);
 // for logout
 
 Route::get('/logout', [UserController::class, 'logout']);
 
-// Route::get('/logout', function(){
-// 	Session::forget('user');
-// 	return redirect('/');
-// });
-
-
-// before login
-// Route::get('/', [Main::class, 'index']);
 
 // search product
 Route::get('/search', [CarsController::class, 'search']);
@@ -122,12 +101,6 @@ Route::get('electronics/details/{id}',[ElectronicController::class, 'details']);
 Route::get('property', [PropertyController::class, 'property']);
 Route::get('property/details/{id}',[PropertyController::class, 'details']);
 
-// Route::get("clothes",[ClothesController::class, 'clothes']);
-// route for details clothes page
-// Route::get('clothes/details/{id}', [ClothesController::class, 'details']);
-
-// Route::get('cars', [CarsController::class, 'cars']);
-// Route::get('cars/details/{id}',[CarsController::class, 'details']);
 
 // sell product
 // for category
@@ -177,30 +150,11 @@ Route::delete('delete/furniture/{id}', [DeleteController::class, 'deleteFurnitur
 Route::delete('delete/electronic/{id}', [DeleteController::class, 'deleteElectronic']);
 Route::delete('delete/property/{id}', [DeleteController::class, 'deleteProperty']);
 
-// Auth::routes();
-
-// Route::get('/', function () {
-//     return view('home');
-// });
-
-// Route::get('/home', 'HomeController@homepage')->name('home');
-// Auth::routes();
-
 
 // contact us
 Route::get('contact-us', [ContactController::class, 'contact']);
 Route::post('contact-us', [ContactController::class, 'contactPost']);
 // Route::get('reset-password', function(){
-
-// return view('ResetPassword');
-
-
-// });
-
-
-
-// route for searching clothes
-// Route::get('search', [ClothesController::class, 'search']);
 
 
 // privacy policy
@@ -210,21 +164,12 @@ return view('terms');
 
 });
 
-// Route::get('search', [CarsController::class, 'search']);
 
-
-
-// chat to seller
-// Route::post('chat-seller', [ClothesController::class, 'chatSeller']);
-// Route::post('/chat-seller', [CarsController::class, 'chatSeller']);
 
 // forgot password
 Route::get('forgot-password', [ForgotPasswordController::class, 'forgot']);
 Route::post('forgot-password', [ForgotPasswordController::class, 'forgotPost']);
 
-// Route::get('/alert', [UserController::class, 'alert']);
-// Route::get('/get-pesan', 'FlashMessageController@pesan');
-// Route::get('/get-pesan', [FlashMessageController::class, 'pesan']);
 
 // get user information
 Route::get('user-profile', [ProfileController::class, 'profile']);

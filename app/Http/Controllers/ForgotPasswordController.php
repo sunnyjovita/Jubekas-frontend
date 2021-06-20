@@ -129,23 +129,14 @@ class ForgotPasswordController extends Controller
                 ]
             ]);
 
-            // $response = Http::post("http://127.0.0.1:8000/api/reset-password/$token?",[
-            //     'query'=>[
-            //         'password'=>$password,
-            //         'ConfirmPassword'=>$ConfirmPassword
-            //     ]
-
-            // ]);
+            
 
             $result = json_decode((string)$response->getBody(), true);
-            // return $result;
-            // dd($result);
+            
 
             $req->session()->flash('success', 'Congratulations! Your password has been changed successfully.');
-            // return redirect('/');
-            Session::forget($token);
-            return view('home');
-            // return redirect('/');
+        
+            return redirect('login');
 
 
 
