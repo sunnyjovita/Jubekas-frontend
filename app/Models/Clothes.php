@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Models;
+// namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+// use Illuminate\Database\Eloquent\Factories\HasFactory;
+// use Illuminate\Database\Eloquent\Model;
 
-class Clothes extends Model
-{
-    use HasFactory;
+// class Clothes extends Model
+// {
+//     use HasFactory;
 
-    public $timestamps = false;
-    protected $connection = 'mysql2';
-}
+//     public $timestamps = false;
+//     protected $connection = 'mysql2';
+// }

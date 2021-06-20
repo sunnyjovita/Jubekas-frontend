@@ -3,29 +3,37 @@
 namespace App\Http\Controllers;
 
 // all products
-use App\Models\Clothes;
-use App\Models\Cars;
+
+
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+use GuzzleHttp\Client;
 
 class HomeController extends Controller
 {
 
-	@return void
-
-	public function__construct(){
-		$this->middleware('auth');
-	}
-
-	@return \Illuminate\Http\Response
+    // public function homepage(){
+    	
+    // 	return view('home');
+    // }
 
     public function homepage(){
-    	// $furniture = Furniture::all();
-    	// $clothes = Clothes::all();
-    	// return [$furniture, $clothes];
-    	// return "Welcome to home page after login";
-    	// return view('home', ['furniture'=>$furniture, 'clothes'=>$clothes]);
-    	return view('home');
+
+    	$result = Http::get('http://127.0.0.1:8000/api/getPost')->json();
+        // dd($cars);
+
+        session()->put([
+             'cars' => $result['cars'],
+            'clothes' => $result['clothes'],
+            'property'=>$result['property'],
+            'electronic'=>$result['electronic'],
+            'furniture'=>$result['furniture']
+             // 'phoneNumber' => $result['phoneNumber'],
+              // 'email' => $result['email'],
+
+        ]);
+        return view('home', ['cars'=>session('cars'), 'clothes'=>session('clothes'), 'furniture'=>session('furniture'), 'electronic'=>session('electronic'), 'property'=>session('property')]);
     }
 
     

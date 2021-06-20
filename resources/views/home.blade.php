@@ -1,9 +1,5 @@
 
 
-
-
-
-
 @extends('master')
 @section('content')
 <!DOCTYPE html>
@@ -11,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width-device-width, initial-scale=1">
-    <title>WEBSITE NAME</title>
+    <title>Jubekas</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
 integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -27,6 +23,16 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
                 {{ session('success') }}
               </div>
               @endif
+
+@if(session('error'))
+              <div class="alert alert-danger alert-block">
+                {{ session('error') }}
+              </div>
+              @endif
+
+
+
+
 <section class="categories ">
     <div class="container-fluid">
         <div class="row">
@@ -35,12 +41,8 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
                     <img src="/web app project new/images/porsche.webp" alt="" class="img-fluid ">
                     <div class="categories_text">
                         <h1>Cars</h1> 
-                        <p>Why do we use it?
-                        It is a long established fact that a reader will be distracted 
-                        by the readable content of a page when looking at its layout. 
-                        The point of using Lorem Ipsum is that it has a more-or-less 
-                        normal distribution of letters.</p>
-                        <a href="#">Buy Now</a>
+                    
+                        <a href="/cars">Buy Now</a>
                     </div>
                 </div>
             </div>
@@ -48,41 +50,41 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
                 <div class="row ">
                     <div class="col-lg-6 col-md-6 col-12 p-0" >
                         <div class="categories_item">
-                            <img src="/web app project new/images/mustang.jpg" alt="" class="img-fluid">
+                            <img src="/web app project new/images/furniture2.jpg" alt="" class="img-fluid">
                             <div class="categories_text">
-                                <h4>Clothes</h4>
-                                <p>15 items</p>
-                                <a href="#">Buy Now</a>
+                                <h4>Furniture</h4>
+                              
+                                <a href="/furniture">Buy Now</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-12 p-0" >
                         <div class="categories_item">
-                            <img src="/web app project new/images/mustang.jpg" alt="" class="img-fluid">
+                            <img src="/web app project new/images/clothes.jpg" alt="" class="img-fluid">
                             <div class="categories_text">
                                 <h4>Clothes</h4>
-                                <p>15 items</p>
-                                <a href="#">Buy Now</a>
+                               
+                                <a href="/clothes">Buy Now</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-12 p-0" >
                         <div class="categories_item">
-                            <img src="/web app project new/images/mustang.jpg" alt="" class="img-fluid">
+                            <img src="/web app project new/images/property.jpg" alt="" class="img-fluid">
                             <div class="categories_text">
-                                <h4>Clothes</h4>
-                                <p>15 items</p>
-                                <a href="#">Buy Now</a>
+                                <h4>Property</h4>
+                              
+                                <a href="/property">Buy Now</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-12 p-0" >
                         <div class="categories_item">
-                            <img src="/web app project new/images/mustang.jpg" alt="" class="img-fluid">
+                            <img src="/web app project new/images/electronics2.jpg" alt="" class="img-fluid">
                             <div class="categories_text">
-                                <h4>Clothes</h4>
-                                <p>15 items</p>
-                                <a href="#">Buy Now</a>
+                                <h4>Electronics</h4>
+                             
+                                <a href="/electronics">Buy Now</a>
                             </div>
                         </div>
                     </div> 
@@ -100,155 +102,71 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
                 </div>
             </div>
         </div>
+
         <div class="row property_gallery">
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="product_item">
-                    <div class="product_item_pic">
-                        <img src="/web app project new/images/fashion.jpg" alt="">
-                        <div class="label new">New</div>
-                        <ul class="product_hover">
-                            <li><a href="#"><i class="fa fa-arrows-alt"></i></a></li>
-                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="product_item_text">
-                        <h6><a href="#">Men's Suit</a></h6>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product_price">Rp. 50.000</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="product_item">
-                    <div class="product_item_pic">
-                        <img src="/web app project new/images/fashion.jpg" alt="">
-                        <div class="label new">New</div>
-                        <ul class="product_hover">
-                            <li><a href="#"><i class="fa fa-arrows-alt"></i></a></li>
-                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="product_item_text">
-                        <h6><a href="#">Men's Suit</a></h6>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product_price">Rp. 50.000</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="product_item">
-                    <div class="product_item_pic">
-                        <img src="/web app project new/images/fashion.jpg" alt="">
-                        <div class="label Sold">Sold</div>
-                        <ul class="product_hover">
-                            <li><a href="#"><i class="fa fa-arrows-alt"></i></a></li>
-                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="product_item_text">
-                        <h6><a href="#">Men's Suit</a></h6>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product_price">Rp. 50.000</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="product_item">
-                    <div class="product_item_pic">
-                        <img src="/web app project new/images/fashion.jpg" alt="">
-                        <div class="label new">New</div>
-                        <ul class="product_hover">
-                            <li><a href="#"><i class="fa fa-arrows-alt"></i></a></li>
-                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="product_item_text">
-                        <h6><a href="#">Men's Suit</a></h6>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product_price">Rp. 50.000</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="product_item">
-                    <div class="product_item_pic">
-                        <img src="/web app project new/images/fashion.jpg" alt="">
-                        <div class="label new">New</div>
-                        <ul class="product_hover">
-                            <li><a href="#"><i class="fa fa-arrows-alt"></i></a></li>
-                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="product_item_text">
-                        <h6><a href="#">Men's Suit</a></h6>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product_price">Rp. 50.000</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="product_item">
-                    <div class="product_item_pic">
-                        <img src="/web app project new/images/fashion.jpg" alt="">
-                        <div class="label Sale">Sale</div>
-                        <ul class="product_hover">
-                            <li><a href="#"><i class="fa fa-arrows-alt"></i></a></li>
-                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="product_item_text">
-                        <h6><a href="#">Men's Suit</a></h6>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product_price">Rp. 30.000 <span>Rp. 55.000</span></div>
-                    </div>
-                </div>
+            @foreach($cars as $item)
+  <div class="trending-item">
+    <a href="cars/details/{{$item['id']}}">
+        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">
+        <div class="trending-image">
+          <h2 style="font-size: 25px">{{ Str::words($item['title'],'3','...') }}</h2>
+          <h5 style="color: black">{{$item['price']}}</h5>
+        </div>
+      </a>
+  </div>
+  @endforeach 
+
+  @foreach($property as $item)
+  <div class="trending-item">
+    <a href="property/details/{{$item['id']}}">
+        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">
+       <div class="trending-image">
+         <h2 style="font-size: 25px">{{ Str::words($item['title'],'3','...') }}</h2>
+          <h5 style="color: black">{{$item['price']}}</h5>
+        </div>
+      </a>
+  </div>
+  @endforeach
+
+    @foreach($clothes as $item)
+  <div class="trending-item">
+    <a href="clothes/details/{{$item['id']}}">
+        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">
+        <div class="trending-image">
+           <h2 style="font-size: 25px">{{ Str::words($item['title'],'3','...') }}</h2>
+          <h5 style="color: black">{{$item['price']}}</h5>
+        </div>
+      </a>
+  </div>
+  @endforeach 
+
+    @foreach($furniture as $item)
+  <div class="trending-item">
+    <a href="furniture/details/{{$item['id']}}">
+        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">
+        <div class="trending-image">
+           <h2 style="font-size: 25px">{{ Str::words($item['title'],'3','...') }}</h2>
+          <h5 style="color: black">{{$item['price']}}</h5>
+        </div>
+      </a>
+  </div>
+  @endforeach 
+    @foreach($electronic as $item)
+  <div class="trending-item">
+    <a href="electronics/details/{{$item['id']}}">
+        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">
+        <div class="trending-image">
+          <h2 style="font-size: 25px">{{ Str::words($item['title'],'3','...') }}</h2>
+          <h5 style="color: black">{{$item['price']}}</h5>
+        </div>
+      </a>
+  </div>
+  @endforeach 
             </div>
         </div>
     </div>
 </section>
-Banner Section
+
 <section class="banner bg-img">
     <div class="container">
         <div class="row">
@@ -258,21 +176,35 @@ Banner Section
                         <div class="banner_text">
                             <span>Furniture Collection</span>
                             <h1>Product</h1>
-                            <a href="#">Buy Now</a>
+                            <a href="/furniture">Buy Now</a>
                         </div>
                     </div>
                     <div class="banner_item">
                         <div class="banner_text">
-                            <span>Furniture Collection</span>
+                            <span>Electronic Collection</span>
                             <h1>Product</h1>
-                            <a href="#">Buy Now</a>
+                            <a href="/electronics">Buy Now</a>
                         </div>
                     </div>
                     <div class="banner_item">
                         <div class="banner_text">
-                            <span>Furniture Collection</span>
+                            <span>Property Collection</span>
                             <h1>Product</h1>
-                            <a href="#">Buy Now</a>
+                            <a href="/Property">Buy Now</a>
+                        </div>
+                    </div>
+                    <div class="banner_item">
+                        <div class="banner_text">
+                            <span>Cars Collection</span>
+                            <h1>Product</h1>
+                            <a href="/cars">Buy Now</a>
+                        </div>
+                    </div>
+                    <div class="banner_item">
+                        <div class="banner_text">
+                            <span>Clothes Collection</span>
+                            <h1>Product</h1>
+                            <a href="/clothes">Buy Now</a>
                         </div>
                     </div>
                 </div>
@@ -335,62 +267,7 @@ Banner Section
     </div>
 </section>
 
-<!-- <section id="content">
-    <div class="instagram">
-        <div class="container-fluid">
-            <div class="row m-0">
-                <div class="col-lg-2 p-0">
-                    <div class="instagram_item">
-                        <img src="/web app project new/images/fashion.jpg">
-                        <div class="instagram_text">
-                            <i class="fa fa-instagram"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 p-0">
-                    <div class="instagram_item">
-                        <img src="/web app project new/images/fashion.jpg">
-                        <div class="instagram_text">
-                            <i class="fa fa-instagram"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 p-0">
-                    <div class="instagram_item">
-                        <img src="/web app project new/images/fashion.jpg">
-                        <div class="instagram_text">
-                            <i class="fa fa-instagram"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 p-0">
-                    <div class="instagram_item">
-                        <img src="/web app project new/images/fashion.jpg">
-                        <div class="instagram_text">
-                            <i class="fa fa-instagram"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 p-0">
-                    <div class="instagram_item">
-                        <img src="/web app project new/images/fashion.jpg">
-                        <div class="instagram_text">
-                            <i class="fa fa-instagram"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 p-0">
-                    <div class="instagram_item">
-                        <img src="/web app project new/images/fashion.jpg">
-                        <div class="instagram_text">
-                            <i class="fa fa-instagram"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
+
 
 <section class="newsletter-area">
     <div class="container">
@@ -407,40 +284,6 @@ Banner Section
     </div>
 </section>
 
-<!-- 
-<section class="footer">
-      <div class="container">
-          <div class="row">
-                  <div class="footer_about">
-                      <div class="footer_logo">
-                          <a href="index.html">JUBEKAS</a>
-                      </div>
-                      <p>Why do we use it?
-                        It is a long established fact that a reader will be distracted by the reooking at its layout.
-                        The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letter.</p>
-                        <div class="footer_social">
-                            <a href="#">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fa fa-linkedin"></i>
-                            </a>
-                        </div>
-                     </div>
-                </div>
-            </div>
-</section>
-<div class="footer_bottom">
-    <p>
-        Copyright &copy; 2021 JUBEKAS. All rights reserved.
-    </p>
-</div> -->
 
 <!-- jQuery Library -->
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

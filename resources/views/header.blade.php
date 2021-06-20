@@ -1,12 +1,3 @@
-<?php
-use App\Http\Controllers\ClothesController;
-
-// $total=0;
-// if(Session::has('user')){
-// $total = ClothesController::chatSeller();
-// }
-
-?>
 
 
 <!DOCTYPE html>
@@ -30,8 +21,8 @@ use App\Http\Controllers\ClothesController;
                     <ul>
                         <li class="active"><a href="/">HOME</a></li>
                         <li><a href="/category">CATEGORIES</a></li>
-                        <li><a href="contact-us">CONTACT</a></li>
-                        <li><a href="#">SELL</a></li>
+                        <li><a href="/contact-us">CONTACT</a></li>
+                        <li><a href="/sell-category">SELL</a></li>
                         <li><a href="#">CHAT</a></li>
                     </ul>
                 </nav>

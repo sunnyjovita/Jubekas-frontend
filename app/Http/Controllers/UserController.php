@@ -2,43 +2,30 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
+
 // call api from backend Jubekas2
 use Illuminate\Support\Facades\Http;
 use GuzzleHttp\Client;
-=======
 
 
->>>>>>> 3e0eea19f2539c6ebd18b5319c159eee682a6667
 
 // implement hash
-// use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Support\Str;
+// use Illuminate\Http\Response;
+// use Illuminate\Support\Str;
 
-
-// take it from models
-// use App\Models\User;
-// use App\Models\Clothes;
 
 use Illuminate\Support\Facades\Session;
 
 
 
-use Illuminate\Validation\ValidationException;
-
-// use resources/lang/en/auth.php;
+// use Illuminate\Validation\ValidationException;
 
 // include validator class
 use Illuminate\Support\Facades\Validator;
 
-use App\Http\Controllers\BaseController;
-use Auth;
 
-
-
-<<<<<<< HEAD
 class UserController extends Controller
 {
 
@@ -108,6 +95,7 @@ class UserController extends Controller
         //  ]);
 
         session()->put([
+            'id' => $result['id'],
              'token' => $result['token'],
             'name' => $result['name'],
              'phoneNumber' => $result['phoneNumber'],
@@ -156,25 +144,9 @@ class UserController extends Controller
         } 
     
 }
-=======
 
-class UserController extends BaseController
-{
-	public function login(Request $req){
-		$validator = Validator::make($req->all(), [
-			'email'=>['required', 'string', 'email'],
-			'password' => ['required', 'string'],
-		]);
->>>>>>> 3e0eea19f2539c6ebd18b5319c159eee682a6667
 
-		if($validator->fails()){
-			return $this->responseError('Login Failed', 422, $validator->errors());
-		}
-		
-		if(Auth::attempt(['email'=>$req->email, 'password'=>$req->password])){
-			$user = Auth::user();
 
-<<<<<<< HEAD
     function register(Request $req){
 
         $validator = Validator::make($req->all(), [
@@ -195,81 +167,13 @@ class UserController extends BaseController
     } 
   
         else if($req->input('password') != $req->input('confirmPassword')){
-=======
-
-			// create token
-			$response = [
-				'token' => $user->createToken('MyToken')->accessToken,
-				'name' =>$user->name,
-				'email' => $user->email,
-				'phoneNumber' => $user->phoneNumber
-				// 'password' => $user->password
-
-
-			];
-			// dd($response);
-			return response()->json($response);
-			// return $this->responseOk($response);
-
-		}
-		else{
-			return $this->responseError('Wrong email or password', 401);
-		}
-
-	}
-
-
-
-
-	public function register(Request $req){
-       
-         // if(empty($req->input('name') && $req->input('email') && $req->input('phoneNumber') && $req->input('password') && $req->input('confirmPassword'))) {
-
-         // 	return $this->responseError('Invalid Input', 401);
-
-         //    //api
-         //    // return response()->json(['error' => 'Invalid Input.'], 401);
-
-         //    // return 'invalid input';
-         //        } 
-
-		$validator = Validator::make($req->all(), [
-			'email'=>['required', 'string', 'email', 'unique:user'],
-			'password' => ['required', 'string', 'min:6'],
-			'name' => ['required', 'string'],
-			'phoneNumber' => 'required|regex:/(^62[0-9].*$)/',
-			'confirmPassword' => ['required', 'string'],
-
-		]);
-
-		if($validator->fails()){
-			return $this->responseError('Registration Failed', 422, $validator->errors());
-		}
-    
-        // $validateEmail = User::where(['email'=>$req->email])->first();
-
-        // if (strlen($req->input('password')) <6 ){
-            // $req->session()->flash('error', 'Invalid length for password (at least 6 characters)');
-            // return view('login');
-            // return view('register');
-
-            // api
-           // return $this->responseError('Wrong password length', 401);
-
-        // return response()->json(['error' => 'Wrong password length'], 401);
-
-        // }
-        if($req->input('password') != $req->input('confirmPassword')){
->>>>>>> 3e0eea19f2539c6ebd18b5319c159eee682a6667
-            $req->session()->flash('error', 'Password and confirm password are not match');
-            // return view('register');
-
-            // api
-             return $this->responseError('Different password and confirm password', 401);
-             // return response()->json(['error' => 'Different confirm password'], 401);
+            $req->session()->flash('error', 'Password and Confirm Password are not same');
+            return view('register');
 
         }
-<<<<<<< HEAD
+
+
+
 
         else{
              $req->session()->flash('error', 'Invalid Input');
@@ -322,76 +226,9 @@ class UserController extends BaseController
         Session::forget('phoneNumber');
         return redirect('login');
     }
-=======
-        // else if($validateEmail){
-        //     $req->session()->flash('error', 'Email account already exists');
-        //     // return view('register');
-        //     // return 'error email';
-
-        //     // api
-        //     return $this->responseError('Email already exists', 401);
 
 
-            // return response()->json(['error' => 'Email already exists'], 401);
 
-        	$params = [
-        		'name' => $req->name,
-        		'email' => $req->email,
-        		'phoneNumber' => $req->phoneNumber,
-        		'password' => Hash::make($req->password),
-
-        	];
-
-        	// dd($params);
-        	if($user = User::create($params)){
-        		$token = $user->createToken('MyToken')->accessToken;
-
-        		$response = [
-        			'token' => $token,
-        			'user' => $user,
-        		];
-
-        		return $this->responseOk($response);
-        	}else{
-
-        		return $this->responseError('Registration Failed', 400);
-
-        	}
-            // $user = new User;
-        
-            // $user->name=$req->name;
-            // $user->email=$req->email;
-            // $user->phoneNumber=$req->phoneNumber;
-            // $user->password=Hash::make($req->password);
-            // $token = 
-            // $user->api_token = Str::random(60);
-
-            // $user->save();
-            // return redirect('/login');
-
-            //api
-
-            // $success['api_token'] = $user->api_token;
-            // $success['name'] = $user->name;
-            
-
-            // return $this->responseOk($params);
-            // return response()->json([$success, 'User registered successfully']);
-         // 
-     
-
-        // }
-
-
-	}
-
-	public function profile(Request $req){
-        return Auth::user();
-		// return $this->responseOk($req->user());
-	}
-
-
->>>>>>> 3e0eea19f2539c6ebd18b5319c159eee682a6667
 
     public function forgot(){
         if(Session::has('email')){
@@ -404,7 +241,6 @@ class UserController extends BaseController
 
     
 }
-<<<<<<< HEAD
 
            
 
@@ -414,7 +250,7 @@ class UserController extends BaseController
 
 
 
-=======
+
     
 
     
@@ -547,4 +383,4 @@ class UserController extends BaseController
     
 
 // }
->>>>>>> 3e0eea19f2539c6ebd18b5319c159eee682a6667
+

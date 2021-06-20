@@ -23,42 +23,42 @@ use App\Http\Controllers\ContactController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::post('login', [UserController::class, 'login'])->name('login');
-Route::post("register", [UserController::class, 'register']);
+// Route::post('login', [UserController::class, 'login'])->name('login');
+// Route::post("register", [UserController::class, 'register']);
 
-// Route::get('user-profile', [UserController::class, 'profile']);
+// // Route::get('user-profile', [UserController::class, 'profile']);
 
-Route::middleware('auth:api')->group(function() {
-    Route::get('user-profile', [UserController::class, 'profile']);
-});
+// Route::middleware('auth:api')->group(function() {
+//     Route::get('user-profile', [UserController::class, 'profile']);
+// });
 
-// route hehe example
-Route::get("data", [hehe::class, 'getData']);
+// // route hehe example
+// Route::get("data", [hehe::class, 'getData']);
 
-// reset password
-Route::post('reset-password/{token}', [ForgotPasswordController::class, 'reset']);
+// // reset password
+// Route::post('reset-password/{token}', [ForgotPasswordController::class, 'reset']);
 
-// contact us 
-Route::post('contact-us', [ContactController::class, 'contact']);
+// // contact us 
+// Route::post('contact-us', [ContactController::class, 'contact']);
 
-// Route::get('clothes/details/{id}', [ClothesController::class, 'details']);
+// // Route::get('clothes/details/{id}', [ClothesController::class, 'details']);
 
-// Route::get('login', [UserController::class, 'login']);
+// // Route::get('login', [UserController::class, 'login']);
 
-// forgot password
-Route::post('forgot-password', [ForgotPasswordController::class, 'forgotPassword']);
+// // forgot password
+// Route::post('forgot-password', [ForgotPasswordController::class, 'forgotPassword']);
 
 
 
-Route::get('search', [CarsController::class, 'search']);
+// Route::get('search', [CarsController::class, 'search']);
 
-// cars
-Route::get('cars', [CarsController::class, 'cars']);
-Route::get('cars/details/{id}',[CarsController::class, 'details']);
+// // cars
+// Route::get('cars', [CarsController::class, 'cars']);
+// Route::get('cars/details/{id}',[CarsController::class, 'details']);
 
-// clothes
-Route::get('clothes', [ClothesController::class, 'clothes']);
-Route::get('clothes/details/{id}',[ClothesController::class, 'details']);
+// // clothes
+// Route::get('clothes', [ClothesController::class, 'clothes']);
+// Route::get('clothes/details/{id}',[ClothesController::class, 'details']);
 
 
 // Route::get('/logout', [UserController::class, 'logout']);

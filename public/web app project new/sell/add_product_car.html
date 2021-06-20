@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="add_product.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <title>Sell a car</title>
+
+    <script>
+      var buttons =  document.querySelectorAll('.myButton');
+      var activeClassName = 'active';
+
+      function activeState(items, activeName) {
+        for(var i = 0; i < items.length; i++) {
+          if(items[i].classList.contains(activeName)) {
+            items[i].classList.remove(activeName);
+          }
+        }
+      }
+
+      for(var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function(e){
+          activeState(buttons, activeClassName);
+          e.target.classList.add(activeClassName);
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <!--header-->
+    <header class="header">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-lg-3">
+                  <div class="header_logo">
+                      <a href="index.html">JUBEKAS</a>
+                  </div>
+              </div>
+              <div class="col-lg-6">
+                  <nav class="header_menu">
+                      <ul>
+                          <li class="active"><a href="index.html">HOME</a></li>
+                          <li><a href="#">CATEGORIES</a></li>
+                          <li><a href="#">CONTACT</a></li>
+                          <li><a href="#">SELL</a></li>
+                      </ul>
+                  </nav>
+              </div>
+              <div class="col-lg-3">
+                  <div class="header_right">
+                      <div class="header_right_auth">
+                          <a href="#">Login</a>
+                          <a href="#">Register</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </header>
+<!--body-->
+<section>
+    <div class="container">
+      <div class="user singupBx">
+        <div class="formBx">
+          <form>
+
+            <h2>Sell a car</h2>
+            <br>
+            <div>
+            <h6>Title</h6><p style="font-size: 12px">*max 75 characters</p></div>
+            <input type="text" name="" placeholder="Title" required>
+            <h6 style="margin-bottom: 0">Brand</h6>
+            <select id="drop-down" class="browser-default custom-select" required>        
+        <option selected="">Brand</option>
+        <option value="1">Toyota</option>
+        <option value="2">Honda</option>
+        <option value="3">Suzuki</option>
+        <option value="4">Mitsubishi</option>
+        <option value="5">Daihatsu</option>
+        <!-- <option value="3">Category</option> -->
+      </select>
+             <h6>Condition</h6>
+             <select id="drop-down" class="browser-default custom-select" required>
+              <option selected="" >Condition</option>
+              <option value="1">New</option>
+              <option value="2">Used</option>
+              <!-- <option value="3">Category</option> -->
+            </select>
+                <!-- <br><br> -->
+             <!-- <h6>Title</h6> -->
+             <h6>Distance</h6>
+             <select id="drop-down" class="browser-default custom-select" required>
+              <option selected="" >Distance</option>
+              <option value="1">&lt; 5000 Km </option>
+              <option value="2">5000 Km - 10.000 Km</option>
+              <option value="3">12.000 Km - 25.000 Km</option>
+              <option value="4">12.000 Km - 25.000 Km</option>
+              <option value="5">&gt; 25.000 Km</option>
+              <!-- <option value="3">Category</option> -->
+            </select>
+            <h6>Location</h6>
+            <select id="drop-down" class="browser-default custom-select" required>
+             <option selected="" >Location</option>
+             <option value="1">Jabodetabek</option>
+             <option value="2">Denpasar</option>
+             <option value="2">Surabaya</option>
+             <!-- <option value="3">Category</option> -->
+           </select>
+            <h6>Description</h6>
+            <textarea rows="2" cols="25" placeholder="Description" required></textarea>
+            <h6>Price</h6>
+            Rp. <input class="pricetag" type="text" name="" placeholder="Price" required>
+            <div class="container_img">
+                <div class="wrapper_img">
+                    <div class="image">
+                        <img src=""  alt="">
+                    </div>
+                    <div class="content_img">
+                        <div class="icon_img">
+                            <i class="fa fa-cloud-upload"></i></div>
+                            <div class="text_img">No file chosen yet!</div>
+                    </div>
+                    <div id="cancel-btn"><i class="fa fa-times"></i></div>
+                    <div class="file-name">File Name here</div>
+                </div>
+                <input id="default-btn" type="file" hidden>
+                <button onclick="defaultBtnActive()" id="custom-btn"type="file">Choose a file</button>
+            </div>
+            <input type="submit" name="" value="Sell it">
+            <script>
+                const wrapper_img = document.querySelector(".wrapper_img");
+                const fileName = document.querySelector(".file-name");
+                const cancelBtn = document.querySelector("#cancel-btn");
+                const defaultBtn = document.querySelector("#default-btn");
+                const customBtn = document.querySelector("#custom-btn");
+                const img = document.querySelector("img");
+                let regEXP = /[0-9a-zA-Z\^\$\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+                function defaultBtnActive() {
+                    defaultBtn.click();
+                }
+                defaultBtn.addEventListener("change", function() {
+                     const file = this.files[0];
+                     if (file) {
+                         const reader = new FileReader();
+                         reader.onload = function() {
+                             const result = reader.result;
+                             img.src = result;
+                             wrapper_img.classList.add("active");
+                }  
+                cancelBtn.addEventListener("click", function() {
+                   img.src = "";
+                   wrapper_img.classList.remove("active"); 
+                });
+                reader.readAsDataURL(file);
+            }
+            if(this.value) {
+                let valueStore =this.value.match(regEXP);
+                fileName.textContent = valueStore;
+            }
+         });
+                </script>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--footer-->
+  <div class="footer">
+    <div class="container">
+        <div class="row">
+                <div class="footer_about">
+                    <div class="footer_logo">
+                        <a href="index.html">JUBEKAS</a>
+                    </div>
+                    <p>Why do we use it?
+                      It is a long established fact that a reader will be distracted by the relooking at its layout.
+                      The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letter.</p>
+                      <div class="footer_social">
+                          <a href="#">
+                              <i class="fa fa-facebook"></i>
+                          </a>
+                          <a href="#">
+                              <i class="fa fa-twitter"></i>
+                          </a>
+                          <a href="#">
+                              <i class="fa fa-instagram"></i>
+                          </a>
+                          <a href="#">
+                              <i class="fa fa-linkedin"></i>
+                          </a>
+                      </div>
+                   </div>
+              </div>
+          </div>
+        </div>
+<div class="footer_bottom">
+  <p>
+      Copyright &copy; 2021 JUBEKAS. All rights reserved.
+  </p>
+</div>
+
+
+</body>
+</html>

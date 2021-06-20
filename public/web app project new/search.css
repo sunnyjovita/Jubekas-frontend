@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+a, a:hover, a:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+.product {
+    padding-top: 60px;
+    padding-bottom: 50px;  
+}
+
+
+.spad {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.searched-item {
+    margin-bottom: 35px;
+}
+
+.searched-item_pic {
+    height: 280px;
+    margin-left: 75px;
+    position: relative;
+    overflow: hidden;   
+}
+
+
+
+.searched-item_text {
+    text-align: center;
+    padding-top: 22px;
+    padding-left: 50px;
+}
+
+.searched-item_text h6 a{
+    font-size: 14px;
+    color: #000;    
+}
+
+.searched-item_text .rating {
+    line-height: 18px;
+    margin-bottom: 5px;
+}
+
+.searched-item_text .rating i{
+    font-size: 10px;
+    color: #e3c01c;
+    margin-right: -4px;
+}
+
+.searched-item_text .rating i:last-child{
+    margin-right: 0;
+}
+
+.searched-item_text .product_price {
+    color: #000;
+    font-weight: 600;
+}
+
+.product_hover {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 30px;
+    text-align: center;
+}
+
+.product_hover li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+    top: 100px;
+    opacity: 0;
+}
+.product_hover li:last-child {
+    margin-right: 0;
+}
+
+.product_hover li:hover a{
+    background-color: #ff7200;   
+}
+
+.product_hover li:hover a span{
+    color:#fff;
+    transform:rotate(360deg);
+}
+
+.product_hover li a{
+        font-size: 18px;
+        color: #000;
+        display: block;
+        width: 45px;
+        height: 45px;
+        background-color: #fff;
+        line-height: 45px;
+        border-radius: 50px;
+        box-shadow: 0 0 25px rgba(24,24,24,0.4);
+        transition: all 0.5s;
+}
+
+.product_hover li a i{
+    position: relative;
+    display: inline-block;
+    transform: rotate(0);
+    transition: all 0.3s;
+}
+
+.searched-item:hover .product_hover li{
+    opacity: 1;
+    top: 0;
+}   
+/*animasi in item*/
+.product_hover li:nth-child(1) {
+    transition: all 0.4s ease 0.1s;
+}
+.product_hover li:nth-child(2) {
+    transition: all 0.4s ease 0.15s;
+}
+.product_hover li:nth-child(3) {
+    transition: all 0.4s ease 0.2s;
+}
+.product_hover li:nth-child(4) {
+    transition: all 0.4s ease 0.25s;
+}
+
+/* for sale price text */
+.searched-item_text .product_price span{
+    font-size: 14px;
+    color: #b1b0b0;
+    text-decoration: line-through;
+    margin-left: 4px;
+}

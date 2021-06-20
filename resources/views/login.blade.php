@@ -62,8 +62,7 @@ function visibility3() {
           <div class="formBx">
             <form action="login" method="POST">  
                 @csrf
-               
-              
+                 
               <h2>Sign In</h2>
               <div class="form-group">
                

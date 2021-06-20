@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*header*/
+a, a:hover, a:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+.header {
+    background-color:#ffff;
+    box-shadow: 0px 5px 10px rgba(91, 91, 91, 0.1);
+}
+
+.header_logo {
+    padding: 26px;
+    text-align: center;
+}
+.header_logo a{
+    display: inline-block;
+    color: #000; 
+    font-size: 27px;
+    text-transform:uppercase;
+    font-weight:700px;
+    letter-spacing: 3px;
+
+}
+
+.header_menu {
+    padding:30px 0 27px;
+    text-align: center;
+
+}
+
+.header_menu ul li{
+    position: relative;
+    display: inline-block;
+    margin-right: 40px;
+}
+
+.header_menu ul li a{
+    color:black;
+    font-size: 17px;
+    font-weight: 500;
+     display: block;
+     padding: 2px 0;
+     position: relative;
+    }
+
+.header_menu ul li:last-child {
+    margin-right: 0;
+}
+
+.header_right {
+    text-align: center;
+    padding: 30px 0 27px;
+
+}
+.header_right .header_right_auth {
+    display: inline-block;
+    margin-right:25px;
+}
+
+.header_right .header_right_auth a{
+    font-size: 17px;
+    color: #666666;
+    position: relative;
+    margin-right: 13px;
+}
+
+.header_right .header_right_auth a:last-child{
+    margin-right: 0px;
+}
+
+.header_right .header_right_auth a:after{
+    position: absolute;
+    right: -12px;
+    top: 2px;
+    content: '/';
+    font-size: 16px;
+}
+
+.header_right .header_right_auth a:last-child:after{
+    display: none;
+}
+
+
+
+/*body*/
+section {
+    margin-top: 20px;
+    position: relative;
+    min-height: 100vh;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+section .container {
+    position: relative;
+    height: 1250px;
+    background: #fff;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+    overflow: hidden;
+ }
+
+ section .container .user {
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;    
+}
+
+section .container .user .imgBx {
+    position: relative;
+    width:100%;
+    height: 100%;
+    transition: 0.5s;
+}
+
+
+section .container .user .formBx {
+    position:relative;
+    width:100%;
+    height: 100%;
+    background:#fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;  
+    transition: 0.5s;    
+}
+section .container .user .formBx form h2 {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    color:#555;
+}
+
+section .container .user .formBx form input {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    background:#f5f5f5;
+    color:#333;
+    border:none;
+    outline: none;
+    box-shadow: none;
+    margin:8px 0;
+    font-size:14px;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+section .container .user .formBx form .form-control {
+    width: 105%;
+    height: 40px;
+    text-align: center;
+}
+
+section .container .user .formBx form textarea {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    background:#f5f5f5;
+    color:#333;
+    border:none;
+    outline: none;
+    box-shadow: none;
+    margin:8px 0;
+    font-size:14px;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+
+section .container .user .formBx .pricetag {
+    width: 100%;
+}
+
+
+section .container .user .formBx form input[type="submit"] {
+    max-width: 100px;
+    background:#677eff;
+    color:#fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+section .container .user .formBx form .signup {
+    position: relative;
+    margin-top:20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color:#555;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+section .container .user .formBx form .signup a {
+    font-weight: 600;
+    text-decoration: none;
+    color:#677eff;
+}
+
+/*img upload*/
+section .container_img {
+    height: 320px;
+    width: 430px; 
+}
+
+section .container_img .wrapper_img {
+    position: relative;
+    height: 270px;
+    width: 100%;
+    border-radius: 10px;
+    background:#fff;
+    border: 2px dashed #c2cdda;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+section .wrapper_img.active {
+    border: none;
+
+}
+section .wrapper_img .image {
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section .wrapper_img .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+section .wrapper_img .icon_img {
+    font-size: 100px;
+    color: #ff7200;
+
+}
+
+section .wrapper_img .text_img {
+    font-size: 20px;
+    font-weight: 500;
+    color: #ff7200;
+}
+
+section .wrapper_img #cancel-btn {
+    position:absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 10px;
+    cursor: pointer;
+    color: #ff7200;
+    display: none;
+}
+
+section .wrapper_img.active:hover #cancel-btn {
+    display: block;
+}
+
+section .wrapper_img #cancel-btn:hover {
+    color: #e74c3c;
+}
+
+section .wrapper_img.active:hover .file-name {
+    display: block;
+}
+
+section .wrapper_img .file-name {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    background: linear-gradient(135deg, #e46d0c 0%, #ff7200 100%);
+    display: none;
+}
+
+section .container_img #custom-btn {
+    margin-top: 10px;
+    width: 100%;
+    height: 25px;
+    display: block;
+    border:none;
+    outline: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: linear-gradient(135deg, #e46d0c 0%, #ff7200 100%);
+}
+
+
+
+
+#drop-down{
+
+    position: relative;
+    width: 100%;
+    height:100%;
+    padding: 10px;
+    background-color:#f5f5f5;
+    color:#555;;
+    border:none;
+    outline: none;
+    box-shadow: none;
+    margin:8px 0;
+    font-size:14px;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.price html {
+  box-sizing: border-box;
+}
+
+.price, .price:before, .price:after {
+  box-sizing: inherit;
+}
+
+.price label {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.price input {
+  text-align : left;
+  border: 2px solid #333;
+  border-radius: 5px;
+  color: #333;
+  font-size: 32px;
+  margin: 0 0 20px;
+  padding: .5rem 1rem;
+  width: 100%;
+}

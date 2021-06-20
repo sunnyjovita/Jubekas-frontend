@@ -1,36 +1,6 @@
 @extends('master')
 @section('content')
 
-<!-- margin = 0 (remove container) -->
-<!-- <div class="container">
-  <div class="row">
-    <div class="col-sm-6">
-      <img class="detail-img" src="{{$cars['image']}}" alt="">
-    </div>
-
-    <div class="col-sm-6">
-      <a href="/cars">Go Back</a>
-      <h2>{{$cars['title']}}</h2>
-      <h3>Brand: {{$cars['brand']}}</h3>
-       <h4>Year: {{$cars['year']}}</h4>
-        <h4>Distance: {{$cars['distance']}}</h4>
-      <h4>Price: Rp  {{$cars['price']}}</h4>
-      <h4>Condition: {{$cars['condition']}}</h4>
-      <h4>Description: {{$cars['description']}}</h4>
-      <br><br>
-
-      <form action="/chat-seller" method="POST">
-        @csrf
-      <button class="btn btn-primary">Chat Seller</button>
-    </form>
-      <br><br>
-
-    </div>
-  </div>
-      
-</div> -->
-
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -49,26 +19,34 @@
     <div class="row">
         <div class="col-2">
             <!-- <img src="images/mercedes.webp" width="100%"> -->
-              <img class="detail-img" src="{{$cars['image']}}" alt="" width="100%">
+              <img class="detail-img" style="width: 350px" src="{{ asset('storage/'.$cars['image']) }}" alt="" width="100%">
+
         </div>
         <div class="col-2">
             <p>Categories: Cars</p>
-             <h1>{{$cars['title']}}</h1>
-             <h4>Brand: {{$cars['brand']}}</h4>
-             <h4>Location: {{$cars['location']}}</h4>
-            <!-- <h1>Title</h1> -->
-            <h4>IDR Rp. {{$cars['price']}}</h4>
-            <h4>Condition: {{$cars['condition']}}</h4>
-            <!-- <h4>IDR Rp. 100,000</h4> -->
-            <!-- <h4>phone : 081213845</h4> -->
+             <h2>{{$cars['title']}}</h2>
+             <h3>Brand: {{$cars['brand']}}</h3>
+             <h3>Location: {{$cars['location']}}</h3>
+             <h3>Year: {{$cars['year']}}</h3>
+             <h3>Distance: {{$cars['distance']}}</h3>
+            <h3>{{$cars['price']}}</h3>
+            <h3>Condition: {{$cars['condition']}}</h3>
             <h3>product details</h3>
             <p>{{$cars['description']}}</p>
 
-                 <form action="/chat-seller" method="POST">
-        @csrf
-      <button class="btn">Chat Seller</button>
-    </form>
-            <a href="/clothes" class="btn-back">Go back </a>
+              @if(Session::has('name'))
+             @if($cars['owner'] == Session::get('id'))
+               
+                 <a class="btn btn-primary" href="/update/car/{{$cars['id']}}">Edit</a>
+                   @else
+                     <a class="btn btn-primary" target="_blank" href="https://wa.me/{{$cars['phoneNumber']}}">Chat Seller</a>
+                @endif
+
+            @else
+              <a class="btn btn-primary" target="_blank" href="/login">Chat Seller</a>
+            @endif
+
+            <a href="{{ URL::previous() }}" class="btn-back">Go back </a>
         </div>
     </div>
       </div>
