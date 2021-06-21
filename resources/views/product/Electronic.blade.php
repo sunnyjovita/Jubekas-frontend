@@ -43,7 +43,9 @@
 
       <div class="item {{$item['id']==1?'active':''}}">
               <a href="electronics/details/{{$item['id']}}">
-        <img src="{{ asset('storage/'.$item['image']) }}" style="display:block; margin-left:auto; margin-right: auto; width: 30%; height:300px;">
+                  <img style="display:block; margin-left:auto; margin-right: auto; width: 30%; height:300px;" src="{{ asset('storage/'.$item['image']) }}" onerror="this.onerror=null;
+                    this.src='http://127.0.0.1:8001/storage/public/noimage.jpg';" />
+{{--        <img src="{{ asset('storage/'.$item['image']) }}" style="display:block; margin-left:auto; margin-right: auto; width: 30%; height:300px;">--}}
         <div class="carousel-caption">
 
           <!-- <h3>{{$item['title']}}</h3> -->
@@ -76,7 +78,9 @@
   @foreach($electronic as $item)
   <div class="trending-item">
     <a href="electronics/details/{{$item['id']}}">
-        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">
+        <img class="trending-image" style="width: 180px; height:180px;" src="{{ asset('storage/'.$item['image']) }}" onerror="this.onerror=null;
+                    this.src='http://127.0.0.1:8001/storage/public/noimage.jpg';" />
+{{--        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">--}}
         <div class="trending-image">
           <!-- <h3>{{$item['title']}}</h3> -->
           <h3>{{ Str::words($item['title'],'3','...') }}</h3>

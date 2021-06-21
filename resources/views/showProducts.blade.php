@@ -1,5 +1,5 @@
 @extends('master')
-     
+
 @section('content')
  <!DOCTYPE html>
 <html>
@@ -8,7 +8,7 @@
     <meta name="viewport" content="width-device-width, initial-scale=1">
     <title>My products</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
@@ -28,7 +28,7 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
               </div>
               @endif
 
-             
+
 
 <body>
     <section>
@@ -42,7 +42,7 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
             </div>
         </div>
     </div>
-    
+
 
     <table class="table table-bordered" >
         <tr>
@@ -58,7 +58,7 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
 
    @foreach($cars as $item)
         <tr>
-           
+
             <td><img src="{{ asset('storage/'.$item['image']) }}" width="150px"></td>
             <td> <a href="/cars/details/{{$item['id']}}">
         <!-- <div class="trending-image"> -->
@@ -73,13 +73,13 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
 
                     <a class="btn btn-primary" href="/update/car/{{$item['id']}}">Edit</a>
 
-                {{method_field('DELETE')}} 
+                {{method_field('DELETE')}}
                 {!! csrf_field() !!}
                     <button type="submit" class="btn btn-danger" value="delete">Delete</button>
                 <!-- </form> -->
             </td>
         </tr>
-  @endforeach 
+  @endforeach
 
   @foreach($clothes as $item)
 
@@ -93,23 +93,23 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
             <td>{{$item['price']}}</td>
             <td>
                 <form action="/delete/clothes/{{$item['id']}}" method="POST">
-     
+
                     <!-- <a class="btn btn-info" href="#">Show</a> -->
-      
+
                     <a class="btn btn-primary" href="/update/clothes/{{$item['id']}}">Edit</a>
-                     {{method_field('DELETE')}} 
+                     {{method_field('DELETE')}}
                 {!! csrf_field() !!}
-                   
-        
+
+
                      <button type="submit" class="btn btn-danger" value="delete">Delete</button>
                 </form>
             </td>
         </tr>
-  @endforeach 
+  @endforeach
 
   @foreach($furniture as $item)
         <tr>
-           
+
             <td><img src="{{ asset('storage/'.$item['image']) }}" width="150px"></td>
             <td> <a href="/furniture/details/{{$item['id']}}">
         <!-- <div class="trending-image"> -->
@@ -122,17 +122,17 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
                 <form action="/delete/furniture/{{$item['id']}}" method="POST">
                     <!-- <a class="btn btn-info" href="#">Show</a> -->
                     <a class="btn btn-primary" href="/update/furniture/{{$item['id']}}">Edit</a>
-                    {{method_field('DELETE')}} 
+                    {{method_field('DELETE')}}
                 {!! csrf_field() !!}
                     <button type="submit" class="btn btn-danger" value="delete">Delete</button>
                 </form>
             </td>
         </tr>
-  @endforeach 
+  @endforeach
 
   @foreach($electronics as $item)
         <tr>
-           
+
             <td><img src="{{ asset('storage/'.$item['image']) }}" width="150px"></td>
             <td> <a href="/electronic/details/{{$item['id']}}">
         <!-- <div class="trending-image"> -->
@@ -145,17 +145,17 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
                 <form action="/delete/electronic/{{$item['id']}}" method="POST">
                     <!-- <a class="btn btn-info" href="#">Show</a> -->
                     <a class="btn btn-primary" href="/update/electronic/{{$item['id']}}">Edit</a>
-                     {{method_field('DELETE')}} 
+                     {{method_field('DELETE')}}
                 {!! csrf_field() !!}
                     <button type="submit" class="btn btn-danger" value="delete">Delete</button>
                 </form>
             </td>
         </tr>
-  @endforeach 
+  @endforeach
 
     @foreach($property as $item)
         <tr>
-           
+
             <td><img src="{{ asset('storage/'.$item['image']) }}" width="150px"></td>
             <td> <a href="/property/details/{{$item['id']}}">
         <!-- <div class="trending-image"> -->
@@ -168,14 +168,14 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
                 <form action="/delete/property/{{$item['id']}}" method="POST">
                     <!-- <a class="btn btn-info" href="#">Show</a> -->
                     <a class="btn btn-primary" href="/update/property/{{$item['id']}}">Edit</a>
-                     {{method_field('DELETE')}} 
+                     {{method_field('DELETE')}}
                 {!! csrf_field() !!}
                     <button type="submit" class="btn btn-danger" value="delete">Delete</button>
                 </form>
             </td>
         </tr>
-  @endforeach 
-      
+  @endforeach
+
     </table>
 
 </section>
@@ -191,5 +191,5 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
     <script type="text/javascript" src="/web app project new/main.js"></script>
 </body>
 </html>
-        
+
 @endsection

@@ -12,13 +12,13 @@
    <meta name="viewport" content="width-device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" type="text/css" href="/web app project new/style.css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  
+
 
 
 
@@ -47,9 +47,11 @@
 
       <div class="item {{$item['id']==114?'active':''}}">
               <a href="cars/details/{{$item['id']}}">
-        <img src="{{ asset('storage/'.$item['image']) }}" style="display:block; margin-left:auto; margin-right: auto; width: 30%; height:300px;">
+                  <img style="display:block; margin-left:auto; margin-right: auto; width: 30%; height:300px;" src="{{ asset('storage/'.$item['image']) }}" onerror="this.onerror=null;
+                    this.src='http://127.0.0.1:8001/storage/public/noimage.jpg';" />
+{{--        <img src="{{ asset('storage/'.$item['image']) }}" style="display:block; margin-left:auto; margin-right: auto; width: 30%; height:300px;">--}}
         <div class="carousel-caption">
-          
+
           <h3>{{ Str::words($item['title'],'3','...') }}</h3>
           <p>{{$item['condition']}}</p>
           <p>{{$item['price']}}</p>
@@ -57,7 +59,7 @@
       </a>
       </div>
       @endforeach
-  
+
     </div>
 
     <!-- Left and right controls -->
@@ -79,14 +81,16 @@
   @foreach($cars as $item)
   <div class="trending-item">
     <a href="cars/details/{{$item['id']}}">
-        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">
+        <img class="trending-image" style="width: 180px; height:180px;" src="{{ asset('storage/'.$item['image']) }}" onerror="this.onerror=null;
+                    this.src='http://127.0.0.1:8001/storage/public/noimage.jpg';" />
+{{--        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">--}}
         <div class="trending-image">
           <!-- <h3>{{$item['title']}}</h3> -->
            <h3>{{ Str::words($item['title'],'3','...') }}</h3>
         </div>
       </a>
   </div>
-  @endforeach 
+  @endforeach
 
 </div>
 <!-- </form> -->
