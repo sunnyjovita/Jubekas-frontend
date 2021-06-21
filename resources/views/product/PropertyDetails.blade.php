@@ -47,21 +47,15 @@
 
                   <a class="btn btn-primary" href="/update/property/{{$property['id']}}">Edit</a>
                    @else
-                <!-- <form action="/chat-seller" method="POST"> -->
-                <!-- @csrf -->
+
                     <a class="btn btn-primary" target="_blank" href="https://wa.me/{{$property['phoneNumber']}}">Chat Seller</a>
 
-                   <!-- <input type="submit" name="" value="https://wa.me/{{$property['phoneNumber']}}"> -->
-                <!-- <button class="btn">Chat Seller</button> -->
-                <!-- </form> -->
                 @endif
 
             @else
-             <!-- <form action="/chat-seller" method="POST"> -->
-                <!-- @csrf -->
+
                 <a class="btn btn-primary" target="_blank" href="/login">Chat Seller</a>
-                <!-- <input type="submit" name="" value="https://wa.me/{{$property['phoneNumber']}}"> -->
-                <!-- </form> -->
+
             @endif
 
             <a href="{{ URL::previous() }}" class="btn-back">Go back </a>

@@ -33,16 +33,17 @@ class CarsController extends Controller
         $carsdetails = Http::get("http://127.0.0.1:8000/api/cars/details/$id");
         $result = json_decode((string)$carsdetails->getBody(), true);
         // return $result;
-        
+
         return view('detailsCars', ['cars'=>$carsdetails]);
     }
-    
+
     public function search(Request $req){
 
-        
+
         $data = $req->input();
         // dd($data);
         $input = $data['query'];
+//        $input = $req->query();
 
         $response = Http::get("http://127.0.0.1:8000/api/search?query=$input");
 
@@ -65,7 +66,7 @@ class CarsController extends Controller
 
         // return view('search');
     }
-    
+
 
 
     // static function chatSeller(Request $req){
@@ -77,18 +78,18 @@ class CarsController extends Controller
     //         // return "Hello this is chat seller page";
     //     }
     //     // else{
-            
+
     //     // }
 
     // }
 
-    
 
 
-   
 
-    
 
-    
-    
+
+
+
+
+
 }

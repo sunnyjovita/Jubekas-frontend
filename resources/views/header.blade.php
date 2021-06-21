@@ -4,7 +4,7 @@
 <html>
 <head>
     <title></title>
-     
+
 
 </head>
 <body>
@@ -23,7 +23,6 @@
                         <li><a href="/category">CATEGORIES</a></li>
                         <li><a href="/contact-us">CONTACT</a></li>
                         <li><a href="/sell-category">SELL</a></li>
-                        <li><a href="#">CHAT</a></li>
                     </ul>
                 </nav>
 
@@ -31,7 +30,8 @@
                 <div class="input-group" style="padding-left:65px;">
 
                     <input type="search" name="query" class="form-control rounded search-box" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
-                    <button type="submit" class="btn btn-outline-primary">search</button>
+{{--                    <button type="submit" class="btn btn-outline-primary">search</button>--}}
+                    <button style="outline-color: black" type="submit" class="btn btn-outline-primary">search</button>
 
                 </div>
 
@@ -39,13 +39,13 @@
             <br>
 
             </div>
-        
-         
+
+
             @if(Session::has('name'))
             <div class="col-lg-3">
                 <div class="header_right">
                     <div class="header_right_auth">
-                       
+
                         <a href="/user-profile">{{Session::get('name')}}</a>
                         <a href="/logout">Logout</a>
                     </div>
@@ -70,7 +70,7 @@
 </html>
 <!-- <div style="clear:both" class="panel panel-default"> -->
 	<!-- <div class="panel-header"> -->
-		
-		
+
+
 	<!-- </div> -->
 <!-- </div> -->
