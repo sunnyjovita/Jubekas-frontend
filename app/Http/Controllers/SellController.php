@@ -97,7 +97,7 @@ class SellController extends Controller
 
         if ($req->file('image')->isValid()) {
             $image = $req->file('image');
-            $destinationPath = 'public';
+            $destinationPath = 'public/public';
              $name = time().'_'.$image->getClientOriginalName();
              $path = $image->storeAs($destinationPath, $name);
             // $path = $image->move($destinationPath, $name);
@@ -192,7 +192,7 @@ class SellController extends Controller
 
         if ($req->file('image')->isValid()) {
             $image = $req->file('image');
-            $destinationPath = 'public';
+            $destinationPath = 'public/public';
              $name = time().'_'.$image->getClientOriginalName();
              $path = $image->storeAs($destinationPath, $name);
             // $path = $image->move($destinationPath, $name);
@@ -291,7 +291,7 @@ class SellController extends Controller
 
         if ($req->file('image')->isValid()) {
             $image = $req->file('image');
-            $destinationPath = 'public';
+            $destinationPath = 'public/public';
              $name = time().'_'.$image->getClientOriginalName();
              $path = $image->storeAs($destinationPath, $name);
             // $path = $image->move($destinationPath, $name);
@@ -389,7 +389,7 @@ class SellController extends Controller
 
         if ($req->file('image')->isValid()) {
             $image = $req->file('image');
-            $destinationPath = 'public';
+            $destinationPath = 'public/public';
              $name = time().'_'.$image->getClientOriginalName();
              $path = $image->storeAs($destinationPath, $name);
             // $path = $image->move($destinationPath, $name);
@@ -493,7 +493,7 @@ class SellController extends Controller
 
         if ($req->file('image')->isValid()) {
             $image = $req->file('image');
-            $destinationPath = 'public';
+            $destinationPath = 'public/public';
              $name = time().'_'.$image->getClientOriginalName();
              $path = $image->storeAs($destinationPath, $name);
             // $path = $image->move($destinationPath, $name);
