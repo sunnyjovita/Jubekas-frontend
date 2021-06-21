@@ -20,7 +20,7 @@
         <div class="col-2">
             <!-- <img src="images/mercedes.webp" width="100%"> -->
 {{--              <img class="detail-img" style="width: 350px" src="{{ asset('storage/'.$electronic['image']) }}" alt="" width="100%">--}}
-            <img class="detail-img" style="width: 350px" alt="" width="100%" src="{{ asset('storage/'.$electronic['image']) }}" onerror="this.onerror=null;
+            <img class="detail-img" style="width: 350px" alt="" width="100%" src="{{asset('storage/public/'.$electronic['image'])}}" onerror="this.onerror=null;
                     this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" />
         </div>
         <div class="col-2">
