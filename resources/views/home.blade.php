@@ -110,7 +110,7 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
             @foreach($cars as $item)
   <div class="trending-item">
     <a href="cars/details/{{$item['id']}}">
-        <img class="trending-image" style="width: 180px; height:180px;" src="{{asset('storage/public/public/'.$item['image'])}}" onerror="this.onerror=null;
+        <img class="trending-image" style="width: 180px; height:180px;" src="{{asset('storage/'.$item['image'])}}" onerror="this.onerror=null;
                     this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" />
 {{--        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">--}}
         <div class="trending-image">
@@ -124,7 +124,7 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
   @foreach($property as $item)
   <div class="trending-item">
     <a href="property/details/{{$item['id']}}">
-        <img class="trending-image" style="width: 180px; height:180px;" src="{{asset('storage/public/public/'.$item['image'])}}" onerror="this.onerror=null;
+        <img class="trending-image" style="width: 180px; height:180px;" src="{{asset('storage/'.$item['image'])}}" onerror="this.onerror=null;
                     this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" />
 {{--        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">--}}
        <div class="trending-image">
@@ -138,7 +138,7 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
     @foreach($clothes as $item)
   <div class="trending-item">
     <a href="clothes/details/{{$item['id']}}">
-        <img class="trending-image" style="width: 180px; height:180px;" src="{{asset('storage/public/public/'.$item['image'])}}" onerror="this.onerror=null;
+        <img class="trending-image" style="width: 180px; height:180px;" src="{{asset('storage/'.$item['image'])}}" onerror="this.onerror=null;
                     this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" />
 {{--        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">--}}
         <div class="trending-image">
@@ -152,7 +152,7 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
     @foreach($furniture as $item)
   <div class="trending-item">
     <a href="furniture/details/{{$item['id']}}">
-        <img class="trending-image" style="width: 180px; height:180px;" src="{{asset('storage/public/public/'.$item['image'])}}" onerror="this.onerror=null;
+        <img class="trending-image" style="width: 180px; height:180px;" src="{{asset('storage/'.$item['image'])}}" onerror="this.onerror=null;
                     this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" />
 {{--        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">--}}
         <div class="trending-image">
@@ -165,7 +165,7 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
     @foreach($electronic as $item)
   <div class="trending-item">
     <a href="electronics/details/{{$item['id']}}">
-        <img class="trending-image" style="width: 180px; height:180px;" src="{{asset('storage/public/public/'.$item['image'])}}" onerror="this.onerror=null;
+        <img class="trending-image" style="width: 180px; height:180px;" src="{{asset('storage/'.$item['image'])}}" onerror="this.onerror=null;
                     this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" />
 {{--        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">--}}
         <div class="trending-image">
