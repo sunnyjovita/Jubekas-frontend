@@ -60,7 +60,7 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
        <tr>
 
         <td>
-            <img width="150px" src="{{asset('storage/public/'.$item['image'])}}"
+            <img width="150px" src="{{asset('storage/public/public/'.$item['image'])}}"
                  onerror="this.onerror=null;
                     this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';"/>
         </td>
@@ -90,7 +90,7 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
   @foreach($clothes as $item)
 
   <tr>
-      <td> <img width="150px" src="{{asset('storage/public/'.$item['image'])}}" onerror="this.onerror=null;
+      <td> <img width="150px" src="{{asset('storage/public/public/'.$item['image'])}}" onerror="this.onerror=null;
                     this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" /></td>
 {{--            <td><img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" width="150px"></td>--}}
             <td> <a href="/clothes/details/{{$item['id']}}">
@@ -117,7 +117,7 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
 
   @foreach($furniture as $item)
         <tr>
-            <td> <img width="150px" src="{{asset('storage/public/'.$item['image'])}}" onerror="this.onerror=null;
+            <td> <img width="150px" src="{{asset('storage/public/public/'.$item['image'])}}" onerror="this.onerror=null;
                     this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" /></td>
 
 {{--            <td><img src="{{ asset('storage/'.$item['image']) }}" width="150px"></td>--}}
@@ -142,7 +142,7 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
 
   @foreach($electronics as $item)
         <tr>
-            <td> <img width="150px" src="{{asset('storage/public/'.$item['image'])}}" onerror="this.onerror=null;
+            <td> <img width="150px" src="{{asset('storage/public/public/'.$item['image'])}}" onerror="this.onerror=null;
                     this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" /></td>
 
 {{--            <td><img src="{{ asset('storage/'.$item['image']) }}" width="150px"></td>--}}
@@ -167,7 +167,7 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
 
     @foreach($property as $item)
         <tr>
-            <td> <img width="150px" src="{{asset('storage/public/'.$item['image'])}}" onerror="this.onerror=null;
+            <td> <img width="150px" src="{{asset('storage/public/public/'.$item['image'])}}" onerror="this.onerror=null;
                     this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" /></td>
 {{--            <td><img src="{{ asset('storage/'.$item['image']) }}" width="150px"></td>--}}
             <td> <a href="/property/details/{{$item['id']}}">

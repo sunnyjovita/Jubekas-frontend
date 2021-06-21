@@ -22,7 +22,7 @@
 {{--            {{dd($cars['image'])}}--}}
 
 {{--                <img class="detail-img" style="width: 350px" src="/storage/public/404.jpg" alt="" width="100%">--}}
-    <img class="detail-img" style="width: 350px" alt="" width="100%" src="{{asset('storage/public/'.$cars['image'])}}" onerror="this.onerror=null;
+    <img class="detail-img" style="width: 350px" alt="" width="100%" src="{{asset('storage/public/public/'.$cars['image'])}}" onerror="this.onerror=null;
                     this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" />
 
         </div>

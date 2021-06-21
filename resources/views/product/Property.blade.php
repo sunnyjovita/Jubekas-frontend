@@ -43,7 +43,7 @@
 
       <div class="item {{$item['id']==4?'active':''}}">
               <a href="property/details/{{$item['id']}}">
-                  <img style="display:block; margin-left:auto; margin-right: auto; width: 30%; height:300px;" src="{{asset('storage/public/'.$item['image'])}}" onerror="this.onerror=null;
+                  <img style="display:block; margin-left:auto; margin-right: auto; width: 30%; height:300px;" src="{{asset('storage/public/public/'.$item['image'])}}" onerror="this.onerror=null;
                     this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" />
 {{--        <img src="{{ asset('storage/'.$item['image']) }}" style="display:block; margin-left:auto; margin-right: auto; width: 30%; height:300px;">--}}
         <div class="carousel-caption">
@@ -77,7 +77,7 @@
   @foreach($property as $item)
   <div class="trending-item">
     <a href="property/details/{{$item['id']}}">
-        <img class="trending-image" style="width: 180px; height:180px;" src="{{asset('storage/public/'.$item['image'])}}" onerror="this.onerror=null;
+        <img class="trending-image" style="width: 180px; height:180px;" src="{{asset('storage/public/public/'.$item['image'])}}" onerror="this.onerror=null;
                     this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" />
 {{--        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">--}}
         <div class="trending-image">

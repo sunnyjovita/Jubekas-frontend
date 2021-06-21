@@ -19,7 +19,7 @@
     <div class="row">
         <div class="col-2">
             <!-- <img src="images/mercedes.webp" width="100%"> -->
-            <img class="detail-img" style="width: 350px" alt="" width="100%" src="{{asset('storage/public/'.$furniture['image'])}}" onerror="this.onerror=null;
+            <img class="detail-img" style="width: 350px" alt="" width="100%" src="{{asset('storage/public/public/'.$furniture['image'])}}" onerror="this.onerror=null;
                     this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" />
 {{--              <img class="detail-img" style="width: 350px" src="{{ asset('storage/'.$furniture['image']) }}" alt="" width="100%">--}}
 
