@@ -80,7 +80,7 @@
   <div class="trending-item">
     <a href="electronics/details/{{$item['id']}}">
 
-        <img class="trending-image" style="width: 180px; height:180px;" src="{{asset('storage/public/public/'.$item['image'])}}"
+        <img class="trending-image" style="width: 180px; height:180px;" src="{{asset('storage/'.$item['image'])}}"
              onerror="this.onerror=null;
                     this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" />
 {{--        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">--}}
