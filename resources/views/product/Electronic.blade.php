@@ -43,7 +43,7 @@
 
       <div class="item {{$item['id']==1?'active':''}}">
               <a href="electronics/details/{{$item['id']}}">
-                  <img style="display:block; margin-left:auto; margin-right: auto; width: 30%; height:300px;" src="{{asset('storage/public/public/'.$item['image'])}}" onerror="this.onerror=null;
+                  <img style="display:block; margin-left:auto; margin-right: auto; width: 30%; height:300px;" src="{{asset('storage/'.$item['image'])}}" onerror="this.onerror=null;
                     this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" />
 
 {{--        <img src="{{ asset('storage/'.$item['image']) }}" style="display:block; margin-left:auto; margin-right: auto; width: 30%; height:300px;">--}}
