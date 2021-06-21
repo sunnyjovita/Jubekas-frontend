@@ -75,7 +75,7 @@ Route::get('/logout', [UserController::class, 'logout']);
 
 
 // search product
-Route::get('/search', [CarsController::class, 'search']);
+Route::get('search', [CarsController::class, 'search']);
 
 
 Route::post("/register", [UserController::class, 'register']);
@@ -84,6 +84,7 @@ Route::post("/register", [UserController::class, 'register']);
 //clothes
 Route::get("clothes",[ClothesController::class, 'clothes']);
 Route::get('/clothes/details/{id}', [ClothesController::class, 'details']);
+Route::get('/clothes/details/search', [CarsController::class, 'search']);
 
 // cars
 Route::get('cars', [CarsController::class, 'cars']);
