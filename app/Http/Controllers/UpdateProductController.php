@@ -18,7 +18,7 @@ class UpdateProductController extends Controller
     public function updateCar($id){
     	if(Session::has('email')){
 
-        $carsdetails = Http::get(env('API_URL')."/api/cars/details/$id");
+        $carsdetails = Http::get(env('API_URL')."api/cars/details/$id");
 
         return view('update.updateCars', ['cars'=>$carsdetails]);
         }
@@ -31,7 +31,7 @@ class UpdateProductController extends Controller
     public function updateClothes($id){
       if(Session::has('email')){
 
-        $clothesdetails = Http::get(env('API_URL')."/api/clothes/details/$id");
+        $clothesdetails = Http::get(env('API_URL')."api/clothes/details/$id");
 
         return view('update.updateClothes', ['clothes'=>$clothesdetails]);
         }
@@ -43,7 +43,7 @@ class UpdateProductController extends Controller
     public function updateFurniture($id){
       if(Session::has('email')){
 
-        $furnidetails = Http::get(env('API_URL')."/api/furniture/details/$id");
+        $furnidetails = Http::get(env('API_URL')."api/furniture/details/$id");
 
         return view('update.updateFurniture', ['furniture'=>$furnidetails]);
         }
@@ -55,7 +55,7 @@ class UpdateProductController extends Controller
     public function updateElectronic($id){
       if(Session::has('email')){
 
-        $electronicdetails = Http::get(env('API_URL')."/api/electronic/details/$id");
+        $electronicdetails = Http::get(env('API_URL')."api/electronic/details/$id");
 
         return view('update.updateElectronic', ['electronic'=>$electronicdetails]);
         }
@@ -67,7 +67,7 @@ class UpdateProductController extends Controller
     public function updateProperty($id){
       if(Session::has('email')){
 
-        $propertydetails = Http::get(env('API_URL')."/api/property/details/$id");
+        $propertydetails = Http::get(env('API_URL')."api/property/details/$id");
 
         return view('update.updateProperty', ['property'=>$propertydetails]);
         }
@@ -127,7 +127,7 @@ class UpdateProductController extends Controller
         $owner = Session::get('id');
         $phoneNumber = Session::get('phoneNumber');
 
-        $response = $http->post(env('API_URL').'/api/update/car/$id',[
+        $response = $http->post(env('API_URL').'api/update/car/$id',[
 
             'query'=>[
 
@@ -246,7 +246,7 @@ class UpdateProductController extends Controller
         $location = $req->location;
         $description = $req->description;
 
-        $response = $http->post(env('API_URL').'/api/update/property/$id',[
+        $response = $http->post(env('API_URL').'api/update/property/$id',[
 
             'query'=>[
 
@@ -356,7 +356,7 @@ class UpdateProductController extends Controller
         $owner = Session::get('id');
         $phoneNumber = Session::get('phoneNumber');
 
-        $response = $http->post(env('API_URL').'/api/update/clothes/$id',[
+        $response = $http->post(env('API_URL').'api/update/clothes/$id',[
 
             'query'=>[
 
@@ -455,7 +455,7 @@ class UpdateProductController extends Controller
         $owner = Session::get('id');
         $phoneNumber = Session::get('phoneNumber');
 
-        $response = $http->post(env('API_URL').'/api/update/furniture/$id',[
+        $response = $http->post(env('API_URL').'api/update/furniture/$id',[
 
             'query'=>[
 
@@ -557,7 +557,7 @@ class UpdateProductController extends Controller
         $owner = Session::get('id');
         $phoneNumber = Session::get('phoneNumber');
 
-        $response = $http->post(env('API_URL').'/api/update/electronic/$id',[
+        $response = $http->post(env('API_URL').'api/update/electronic/$id',[
 
             'query'=>[
 

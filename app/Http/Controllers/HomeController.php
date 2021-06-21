@@ -20,7 +20,7 @@ class HomeController extends Controller
 
     public function homepage(){
 
-    	$result = Http::get(env('API_URL').'/api/getPost')->json();
+    	$result = Http::get(env('API_URL').'api/getPost')->json();
         // dd($cars);
 
         session()->put([

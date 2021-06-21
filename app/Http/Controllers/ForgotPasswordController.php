@@ -47,7 +47,7 @@ class ForgotPasswordController extends Controller
         // fetch data from API
         $email = $req->email;
 
-        $response = $http->post(env('API_URL').'/api/forgot-password?',[
+        $response = $http->post(env('API_URL').'api/forgot-password?',[
 
             'query'=>[
                 'email'=>$email,
@@ -120,7 +120,7 @@ class ForgotPasswordController extends Controller
             $ConfirmPassword = $req->ConfirmPassword;
 
 
-            $response = $http->post(env('API_URL')."/api/reset-password/$token?",[
+            $response = $http->post(env('API_URL')."api/reset-password/$token?",[
 
                 'query'=>[
                     'password'=>$password,

@@ -20,7 +20,7 @@ class ClothesController extends Controller
 
     	// $clothes = Clothes::all();
     	// return view('clothes', ['clothes'=>$clothes]);
-        $clothes = Http::get(env('API_URL').'/api/clothes')->json();
+        $clothes = Http::get(env('API_URL').'api/clothes')->json();
         return view('clothes',['clothes'=>$clothes]);
 
     }
@@ -28,7 +28,7 @@ class ClothesController extends Controller
 
     public function details($id){
 
-        $clothesdetails = Http::get(env('API_URL').'/api/clothes/details/'.$id);
+        $clothesdetails = Http::get(env('API_URL').'api/clothes/details/'.$id);
         $result = json_decode((string)$clothesdetails->getBody(), true);
         // return $result;
         return view('detailsClothes', ['clothes' =>$clothesdetails]);

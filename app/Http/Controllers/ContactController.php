@@ -51,7 +51,7 @@ class ContactController extends Controller
         $name = $req->name;
         $message = $req->message;
 
-        $response = $http->post(env('API_URL').'/api/contact-us?',[
+        $response = $http->post(env('API_URL').'api/contact-us?',[
 
             'query'=>[
                 'email'=>$email,

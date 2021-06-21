@@ -16,7 +16,7 @@ class FurnitureController extends Controller
     public function furniture()
     {
 
-        $furniture = Http::get(env('API_URL').'/api/furniture')->json();
+        $furniture = Http::get(env('API_URL').'api/furniture')->json();
 
         return view('product.Furniture',['furniture'=>$furniture]);
 
@@ -25,7 +25,7 @@ class FurnitureController extends Controller
 
 
 
-        $furnituredetails = Http::get(env('API_URL')."/api/furniture/details/$id");
+        $furnituredetails = Http::get(env('API_URL')."api/furniture/details/$id");
         $result = json_decode((string)$furnituredetails->getBody(), true);
 
         return view('product.FurnitureDetails', ['furniture'=>$furnituredetails]);

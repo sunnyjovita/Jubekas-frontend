@@ -124,7 +124,7 @@ class SellController extends Controller
         $owner = Session::get('id');
         $phoneNumber = Session::get('phoneNumber');
 
-        $response = $http->post(env('API_URL').'/api/post/car?',[
+        $response = $http->post(env('API_URL').'api/post/car?',[
 
             'query'=>[
                 'owner'=>$owner,
@@ -222,7 +222,7 @@ class SellController extends Controller
         // return $location;
         // return $image;
 
-        $response = $http->post(env('API_URL').'/api/post/furniture?',[
+        $response = $http->post(env('API_URL').'api/post/furniture?',[
 
             'query'=>[
 
@@ -318,7 +318,7 @@ class SellController extends Controller
         $description = $req->description;
 
 
-        $response = $http->post(env('API_URL').'/api/post/electronic?',[
+        $response = $http->post(env('API_URL').'api/post/electronic?',[
 
             'query'=>[
 
@@ -419,7 +419,7 @@ class SellController extends Controller
         // return $location;
         // return $image;
 
-        $response = $http->post(env('API_URL').'/api/post/clothes?',[
+        $response = $http->post(env('API_URL').'api/post/clothes?',[
 
             'query'=>[
 
@@ -531,7 +531,7 @@ class SellController extends Controller
         // return $location;
         // return $image;
 
-        $response = $http->post(env('API_URL').'/api/post/property?',[
+        $response = $http->post(env('API_URL').'api/post/property?',[
 
             'query'=>[
 

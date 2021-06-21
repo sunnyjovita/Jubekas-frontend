@@ -28,7 +28,7 @@ class ProfileController extends Controller
     public function products($id){
          if(Session::has('email')){
 
-        $result = Http::get(env('API_URL')."/api/user-profile/products/$id")->json();
+        $result = Http::get(env('API_URL')."api/user-profile/products/$id")->json();
         // return view('cars',['cars'=>$cars]);
         // dd($result);
 
@@ -82,7 +82,7 @@ class ProfileController extends Controller
         $email = $req->email;
         $phoneNumber = $req->phoneNumber;
 
-        $response = $http->post(env('API_URL').'/api/update-profile?',[
+        $response = $http->post(env('API_URL').'api/update-profile?',[
             'query'=>[
                 'id'=>$id,
                 'name'=>$name,
