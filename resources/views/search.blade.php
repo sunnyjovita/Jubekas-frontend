@@ -31,7 +31,7 @@
   <div class="trending-item">
     <a href="cars/details/{{$item['id']}}">
         <img class="trending-image" style="width: 180px; height:180px;" src="{{ asset('storage/'.$item['image']) }}" onerror="this.onerror=null;
-                    this.src='http://127.0.0.1:8001/storage/public/noimage.jpg';" />
+                    this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" />
 {{--        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">--}}
         <div class="trending-image">
 {{--          <h2 style="font-size: 25px">{{$item['title']}}</h2>--}}
@@ -47,7 +47,7 @@
   <div class="trending-item">
     <a href="property/details/{{$item['id']}}">
         <img class="trending-image" style="width: 180px; height:180px;" src="{{ asset('storage/'.$item['image']) }}" onerror="this.onerror=null;
-                    this.src='http://127.0.0.1:8001/storage/public/noimage.jpg';" />
+                    this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" />
 {{--        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">--}}
        <div class="trending-image">
            <h2 style="font-size: 25px">{{ Str::words($item['title'],'3','...') }}</h2>
@@ -63,7 +63,7 @@
   <div class="trending-item">
     <a href="clothes/details/{{$item['id']}}">
         <img class="trending-image" style="width: 180px; height:180px;" src="{{ asset('storage/'.$item['image']) }}" onerror="this.onerror=null;
-                    this.src='http://127.0.0.1:8001/storage/public/noimage.jpg';" />
+                    this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" />
 {{--        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">--}}
         <div class="trending-image">
 {{--           <h2 style="font-size: 25px">{{$item['title']}}</h2>--}}
@@ -79,7 +79,7 @@
   <div class="trending-item">
     <a href="furniture/details/{{$item['id']}}">
         <img class="trending-image" style="width: 180px; height:180px;" src="{{ asset('storage/'.$item['image']) }}" onerror="this.onerror=null;
-                    this.src='http://127.0.0.1:8001/storage/public/noimage.jpg';" />
+                    this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" />
 {{--        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">--}}
         <div class="trending-image">
 {{--           <h2 style="font-size: 25px">{{$item['title']}}</h2>--}}
@@ -94,7 +94,7 @@
   <div class="trending-item">
     <a href="electronics/details/{{$item['id']}}">
         <img class="trending-image" style="width: 180px; height:180px;" src="{{ asset('storage/'.$item['image']) }}" onerror="this.onerror=null;
-                    this.src='http://127.0.0.1:8001/storage/public/noimage.jpg';" />
+                    this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" />
 {{--        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">--}}
         <div class="trending-image">
 {{--          <h2 style="font-size: 25px">{{$item['title']}}</h2>--}}

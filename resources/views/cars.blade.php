@@ -48,7 +48,7 @@
       <div class="item {{$item['id']==114?'active':''}}">
               <a href="cars/details/{{$item['id']}}">
                   <img style="display:block; margin-left:auto; margin-right: auto; width: 30%; height:300px;" src="{{ asset('storage/'.$item['image']) }}" onerror="this.onerror=null;
-                    this.src='http://127.0.0.1:8001/storage/public/noimage.jpg';" />
+                    this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" />
 {{--        <img src="{{ asset('storage/'.$item['image']) }}" style="display:block; margin-left:auto; margin-right: auto; width: 30%; height:300px;">--}}
         <div class="carousel-caption">
 
@@ -82,7 +82,7 @@
   <div class="trending-item">
     <a href="cars/details/{{$item['id']}}">
         <img class="trending-image" style="width: 180px; height:180px;" src="{{ asset('storage/'.$item['image']) }}" onerror="this.onerror=null;
-                    this.src='http://127.0.0.1:8001/storage/public/noimage.jpg';" />
+                    this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" />
 {{--        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">--}}
         <div class="trending-image">
           <!-- <h3>{{$item['title']}}</h3> -->

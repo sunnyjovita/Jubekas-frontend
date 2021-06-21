@@ -62,7 +62,7 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
         <td>
             <img width="150px" src="{{ asset('storage/'.$item['image']) }}"
                  onerror="this.onerror=null;
-                    this.src='http://127.0.0.1:8001/storage/public/noimage.jpg';">
+                    this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';">
         </td>
 {{--            <td><img src="{{ asset('storage/'.$item['image']) }}" width="150px"></td>--}}
             <td> <a href="/cars/details/{{$item['id']}}">
@@ -90,7 +90,7 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
 
   <tr>
       <td> <img width="150px" src="{{ asset('storage/'.$item['image']) }}" onerror="this.onerror=null;
-                    this.src='http://127.0.0.1:8001/storage/public/noimage.jpg';" /></td>
+                    this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" /></td>
 {{--            <td><img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" width="150px"></td>--}}
             <td> <a href="/clothes/details/{{$item['id']}}">
         <!-- <div class="trending-image"> -->
@@ -117,7 +117,7 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
   @foreach($furniture as $item)
         <tr>
             <td> <img width="150px" src="{{ asset('storage/'.$item['image']) }}" onerror="this.onerror=null;
-                    this.src='http://127.0.0.1:8001/storage/public/noimage.jpg';" /></td>
+                    this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" /></td>
 
 {{--            <td><img src="{{ asset('storage/'.$item['image']) }}" width="150px"></td>--}}
             <td> <a href="/furniture/details/{{$item['id']}}">
@@ -142,7 +142,7 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
   @foreach($electronics as $item)
         <tr>
             <td> <img width="150px" src="{{ asset('storage/'.$item['image']) }}" onerror="this.onerror=null;
-                    this.src='http://127.0.0.1:8001/storage/public/noimage.jpg';" /></td>
+                    this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" /></td>
 
 {{--            <td><img src="{{ asset('storage/'.$item['image']) }}" width="150px"></td>--}}
             <td> <a href="/electronic/details/{{$item['id']}}">
@@ -167,7 +167,7 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
     @foreach($property as $item)
         <tr>
             <td> <img width="150px" src="{{ asset('storage/'.$item['image']) }}" onerror="this.onerror=null;
-                    this.src='http://127.0.0.1:8001/storage/public/noimage.jpg';" /></td>
+                    this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" /></td>
 {{--            <td><img src="{{ asset('storage/'.$item['image']) }}" width="150px"></td>--}}
             <td> <a href="/property/details/{{$item['id']}}">
         <!-- <div class="trending-image"> -->
