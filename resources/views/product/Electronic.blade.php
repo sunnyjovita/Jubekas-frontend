@@ -26,50 +26,50 @@
 
 <div class="container">
   <!-- <h2>Carousel Example</h2> -->
-  <div id="TrendingProducts" class="carousel slide" data-ride="carousel">
+{{--  <div id="TrendingProducts" class="carousel slide" data-ride="carousel">--}}
     <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="" data-slide-to="0" class="active"></li>
-      <li data-target="" data-slide-to="1"></li>
-      <li data-target="" data-slide-to="2"></li>
-      <li data-target="" data-slide-to="3"></li>
-      <li data-target="" data-slide-to="4"></li>
-    </ol>
+{{--    <ol class="carousel-indicators">--}}
+{{--      <li data-target="" data-slide-to="0" class="active"></li>--}}
+{{--      <li data-target="" data-slide-to="1"></li>--}}
+{{--      <li data-target="" data-slide-to="2"></li>--}}
+{{--      <li data-target="" data-slide-to="3"></li>--}}
+{{--      <li data-target="" data-slide-to="4"></li>--}}
+{{--    </ol>--}}
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner">
+{{--    <div class="carousel-inner">--}}
 
-      @foreach($electronic as $item)
+{{--      @foreach($electronic as $item)--}}
 
-      <div class="item {{$item['id']==1?'active':''}}">
-              <a href="electronics/details/{{$item['id']}}">
-                  <img style="display:block; margin-left:auto; margin-right: auto; width: 30%; height:300px;" src="{{asset('storage/'.$item['image'])}}" onerror="this.onerror=null;
-                    this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" />
+{{--      <div class="item {{$item['id']==1?'active':''}}">--}}
+{{--              <a href="electronics/details/{{$item['id']}}">--}}
+{{--                  <img style="display:block; margin-left:auto; margin-right: auto; width: 30%; height:300px;" src="{{asset('storage/'.$item['image'])}}" onerror="this.onerror=null;--}}
+{{--                    this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" />--}}
 
 {{--        <img src="{{ asset('storage/'.$item['image']) }}" style="display:block; margin-left:auto; margin-right: auto; width: 30%; height:300px;">--}}
-        <div class="carousel-caption">
+{{--        <div class="carousel-caption">--}}
 
-          <!-- <h3>{{$item['title']}}</h3> -->
-          <h3>{{ Str::words($item['title'],'3','...') }}</h3>
-          <p>{{$item['condition']}}</p>
-          <p>{{$item['price']}}</p>
-        </div>
-      </a>
-      </div>
-      @endforeach
+{{--          <!-- <h3>{{$item['title']}}</h3> -->--}}
+{{--          <h3>{{ Str::words($item['title'],'3','...') }}</h3>--}}
+{{--          <p>{{$item['condition']}}</p>--}}
+{{--          <p>{{$item['price']}}</p>--}}
+{{--        </div>--}}
+{{--      </a>--}}
+{{--      </div>--}}
+{{--      @endforeach--}}
 
-    </div>
+{{--    </div>--}}
 
     <!-- Left and right controls -->
-    <a class="left carousel-control" href="#TrendingProducts" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#TrendingProducts" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
+{{--    <a class="left carousel-control" href="#TrendingProducts" data-slide="prev">--}}
+{{--      <span class="glyphicon glyphicon-chevron-left"></span>--}}
+{{--      <span class="sr-only">Previous</span>--}}
+{{--    </a>--}}
+{{--    <a class="right carousel-control" href="#TrendingProducts" data-slide="next">--}}
+{{--      <span class="glyphicon glyphicon-chevron-right"></span>--}}
+{{--      <span class="sr-only">Next</span>--}}
+{{--    </a>--}}
+{{--  </div>--}}
 
 
 
