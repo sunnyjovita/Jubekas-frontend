@@ -146,7 +146,7 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
                     this.src='{{env('APP_URL')}}/storage/public/public/noimage.jpg';" /></td>
 
 {{--            <td><img src="{{ asset('storage/'.$item['image']) }}" width="150px"></td>--}}
-            <td> <a href="/electronic/details/{{$item['id']}}">
+            <td> <a href="/electronics/details/{{$item['id']}}">
         <!-- <div class="trending-image"> -->
           <h3>{{$item['title']}}</h3>
         <!-- </div> -->

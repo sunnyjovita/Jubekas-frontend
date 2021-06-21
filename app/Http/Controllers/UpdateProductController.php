@@ -112,7 +112,6 @@ class UpdateProductController extends Controller
 
 }
 
-
  		// fetch data for API
 		    $id = $req->id;
         $title = $req->title;
