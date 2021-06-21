@@ -27,7 +27,6 @@ class UpdateProductController extends Controller
         }
     }
 
-
     public function updateClothes($id){
       if(Session::has('email')){
 
