@@ -14,8 +14,8 @@ class DeleteController extends Controller
     //
     public function deleteCars($id){
 
-    	$cars = Http::delete("http://127.0.0.1:8000/api/delete/car/$id");
- 
+    	$cars = Http::delete(env('API_URL')."/api/delete/car/$id");
+
         // $id = Session::get('id');
         // $req->session()->flash('success', 'successfully deleted ur product');
 
@@ -27,8 +27,8 @@ class DeleteController extends Controller
     }
 
     public function deleteClothes($id){
-    	$clothes = Http::delete("http://127.0.0.1:8000/api/delete/clothes/$id");
-    	
+    	$clothes = Http::delete(env('API_URL')."/api/delete/clothes/$id");
+
         // $id = Session::get('id');
          // $req->session()->flash('success', 'successfully deleted ur product');
         // return view('profile.user-profile');
@@ -37,27 +37,27 @@ class DeleteController extends Controller
     }
 
     public function deleteElectronic($id){
-    	$electronic = Http::delete("http://127.0.0.1:8000/api/delete/electronic/$id");
-    	
+    	$electronic = Http::delete(env('API_URL')."/api/delete/electronic/$id");
+
         $id = Session::get('id');
         return redirect()->to('user-profile/products/'.$id);
 
     }
 
     public function deleteFurniture($id){
-    	$furniture = Http::delete("http://127.0.0.1:8000/api/delete/furniture/$id");
+    	$furniture = Http::delete(env('API_URL')."/api/delete/furniture/$id");
         $id = Session::get('id');
-        
-       
+
+
         return redirect()->to('user-profile/products/'.$id);
 
     }
 
     public function deleteProperty($id){
 
-    	$property = Http::delete("http://127.0.0.1:8000/api/delete/property/$id");
+    	$property = Http::delete(env('API_URL')."/api/delete/property/$id");
         $id = Session::get('id');
-        
+
 
         return redirect()->to('user-profile/products/'.$id);
     }

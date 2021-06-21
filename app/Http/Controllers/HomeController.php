@@ -14,13 +14,13 @@ class HomeController extends Controller
 {
 
     // public function homepage(){
-    	
+
     // 	return view('home');
     // }
 
     public function homepage(){
 
-    	$result = Http::get('http://127.0.0.1:8000/api/getPost')->json();
+    	$result = Http::get(env('API_URL').'/api/getPost')->json();
         // dd($cars);
 
         session()->put([
@@ -36,5 +36,5 @@ class HomeController extends Controller
         return view('home', ['cars'=>session('cars'), 'clothes'=>session('clothes'), 'furniture'=>session('furniture'), 'electronic'=>session('electronic'), 'property'=>session('property')]);
     }
 
-    
+
 }

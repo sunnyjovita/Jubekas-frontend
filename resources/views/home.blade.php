@@ -50,7 +50,10 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
                 <div class="row ">
                     <div class="col-lg-6 col-md-6 col-12 p-0" >
                         <div class="categories_item">
-                            <img src="/web app project new/images/furniture2.jpg" alt="" class="img-fluid">
+
+                                <img src="<?php echo asset('web app project new/images/furniture2.jpg')?>" alt="" class="img-fluid">
+
+{{--                                <img src="/web app project new/images/furniture2.jpg" alt="" class="img-fluid">--}}
                             <div class="categories_text">
                                 <h4>Furniture</h4>
 

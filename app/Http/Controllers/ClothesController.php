@@ -20,7 +20,7 @@ class ClothesController extends Controller
 
     	// $clothes = Clothes::all();
     	// return view('clothes', ['clothes'=>$clothes]);
-        $clothes = Http::get('http://127.0.0.1:8000/api/clothes')->json();
+        $clothes = Http::get(env('API_URL').'/api/clothes')->json();
         return view('clothes',['clothes'=>$clothes]);
 
     }
@@ -28,7 +28,7 @@ class ClothesController extends Controller
 
     public function details($id){
 
-        $clothesdetails = Http::get('http://127.0.0.1:8000/api/clothes/details/'.$id);
+        $clothesdetails = Http::get(env('API_URL').'/api/clothes/details/'.$id);
         $result = json_decode((string)$clothesdetails->getBody(), true);
         // return $result;
         return view('detailsClothes', ['clothes' =>$clothesdetails]);
@@ -37,7 +37,7 @@ class ClothesController extends Controller
     	// $clothesdetails = Clothes::find($id);
         // hehehe
 
-     
+
     	// return Clothes::find($id);
     	// $clothesdetails = Clothes::find($id);
     	// return view('detailsClothes', ['clothes'=>$clothesdetails]);
@@ -45,7 +45,7 @@ class ClothesController extends Controller
 
     // public function search(Request $req){
     //     // return $req->input();
-    //     $clothesSearch = Clothes::where('title', 'like', '%'.$req->input('query').'%')->get(); 
+    //     $clothesSearch = Clothes::where('title', 'like', '%'.$req->input('query').'%')->get();
     //     return view('searchClothes', ['clothes'=>$clothesSearch]);
 
     // }
@@ -70,7 +70,7 @@ class ClothesController extends Controller
 
     // public function chat(){
         // $userID = Session::get('user')['id'];
-        // return  
+        // return
     // }
 
 }

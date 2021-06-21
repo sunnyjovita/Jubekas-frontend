@@ -17,9 +17,9 @@ class UpdateProductController extends Controller
     //
     public function updateCar($id){
     	if(Session::has('email')){
-    		
-        $carsdetails = Http::get("http://127.0.0.1:8000/api/cars/details/$id");
-        
+
+        $carsdetails = Http::get(env('API_URL')."/api/cars/details/$id");
+
         return view('update.updateCars', ['cars'=>$carsdetails]);
         }
         else{
@@ -30,9 +30,9 @@ class UpdateProductController extends Controller
 
     public function updateClothes($id){
       if(Session::has('email')){
-        
-        $clothesdetails = Http::get("http://127.0.0.1:8000/api/clothes/details/$id");
-       
+
+        $clothesdetails = Http::get(env('API_URL')."/api/clothes/details/$id");
+
         return view('update.updateClothes', ['clothes'=>$clothesdetails]);
         }
         else{
@@ -42,9 +42,9 @@ class UpdateProductController extends Controller
 
     public function updateFurniture($id){
       if(Session::has('email')){
-        
-        $furnidetails = Http::get("http://127.0.0.1:8000/api/furniture/details/$id");
-        
+
+        $furnidetails = Http::get(env('API_URL')."/api/furniture/details/$id");
+
         return view('update.updateFurniture', ['furniture'=>$furnidetails]);
         }
         else{
@@ -54,9 +54,9 @@ class UpdateProductController extends Controller
 
     public function updateElectronic($id){
       if(Session::has('email')){
-      
-        $electronicdetails = Http::get("http://127.0.0.1:8000/api/electronic/details/$id");
-        
+
+        $electronicdetails = Http::get(env('API_URL')."/api/electronic/details/$id");
+
         return view('update.updateElectronic', ['electronic'=>$electronicdetails]);
         }
         else{
@@ -66,9 +66,9 @@ class UpdateProductController extends Controller
 
     public function updateProperty($id){
       if(Session::has('email')){
-        
-        $propertydetails = Http::get("http://127.0.0.1:8000/api/property/details/$id");
-        
+
+        $propertydetails = Http::get(env('API_URL')."/api/property/details/$id");
+
         return view('update.updateProperty', ['property'=>$propertydetails]);
         }
         else{
@@ -93,7 +93,7 @@ class UpdateProductController extends Controller
 		if($validator->fails()){
 	    // return redirect()->to('user-profile/products/'.$id);
 			return back();
-		
+
         }
 
         try{
@@ -101,7 +101,7 @@ class UpdateProductController extends Controller
        	$http = new \GuzzleHttp\Client;
 
         if($req->hasFile('image')){
-        
+
         if ($req->file('image')->isValid()) {
             $image = $req->file('image');
             $destinationPath = 'public';
@@ -127,10 +127,10 @@ class UpdateProductController extends Controller
         $owner = Session::get('id');
         $phoneNumber = Session::get('phoneNumber');
 
-        $response = $http->post('http://127.0.0.1:8000/api/update/car/$id',[
+        $response = $http->post(env('API_URL').'/api/update/car/$id',[
 
             'query'=>[
- 
+
             	'id'=>$id,
                 'owner'=>$owner,
             	'title'=>$title,
@@ -165,7 +165,7 @@ class UpdateProductController extends Controller
              'phoneNumber'=>$result['phoneNumber']
 
          ]);
-        
+
         $req->session()->flash('success', session('message'));
         // dd($result);
         // return view('showProducts');
@@ -198,13 +198,13 @@ class UpdateProductController extends Controller
             'price'=>['required', 'string'],
             'description'=>['required', 'string'],
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-          
+
         ]);
 
     if($validator->fails()){
-  
+
       return back();
-    
+
         }
 
         try{
@@ -212,7 +212,7 @@ class UpdateProductController extends Controller
         $http = new \GuzzleHttp\Client;
 
         if($req->hasFile('image')){
-        
+
         if ($req->file('image')->isValid()) {
             $image = $req->file('image');
             $destinationPath = 'public';
@@ -246,15 +246,15 @@ class UpdateProductController extends Controller
         $location = $req->location;
         $description = $req->description;
 
-        $response = $http->post('http://127.0.0.1:8000/api/update/property/$id',[
+        $response = $http->post(env('API_URL').'/api/update/property/$id',[
 
             'query'=>[
- 
+
                 'id'=>$id,
                 'owner'=>$owner,
                 'title'=>$title,
                 'type'=>$type,
-                'landSize'=>$landSize, 
+                'landSize'=>$landSize,
                 'buildingSize'=>$buildingSize,
                 'address'=>$address,
                 'bedrooms'=>$bedrooms,
@@ -292,7 +292,7 @@ class UpdateProductController extends Controller
              'phoneNumber'=>$result['phoneNumber']
 
          ]);
-        
+
         $req->session()->flash('success', session('message'));
         // dd($result);
         // return view('showProducts');
@@ -330,7 +330,7 @@ class UpdateProductController extends Controller
         $http = new \GuzzleHttp\Client;
 
         if($req->hasFile('image')){
-        
+
         if ($req->file('image')->isValid()) {
             $image = $req->file('image');
             $destinationPath = 'public';
@@ -356,10 +356,10 @@ class UpdateProductController extends Controller
         $owner = Session::get('id');
         $phoneNumber = Session::get('phoneNumber');
 
-        $response = $http->post('http://127.0.0.1:8000/api/update/clothes/$id',[
+        $response = $http->post(env('API_URL').'/api/update/clothes/$id',[
 
             'query'=>[
- 
+
               'id'=>$id,
                 'owner'=>$owner,
               'title'=>$title,
@@ -393,7 +393,7 @@ class UpdateProductController extends Controller
              'phoneNumber'=>$result['phoneNumber']
 
          ]);
-        
+
         $req->session()->flash('success', session('message'));
         // dd($result);
         // return view('showProducts');
@@ -429,7 +429,7 @@ class UpdateProductController extends Controller
         $http = new \GuzzleHttp\Client;
 
         if($req->hasFile('image')){
-        
+
         if ($req->file('image')->isValid()) {
             $image = $req->file('image');
             $destinationPath = 'public';
@@ -455,10 +455,10 @@ class UpdateProductController extends Controller
         $owner = Session::get('id');
         $phoneNumber = Session::get('phoneNumber');
 
-        $response = $http->post('http://127.0.0.1:8000/api/update/furniture/$id',[
+        $response = $http->post(env('API_URL').'/api/update/furniture/$id',[
 
             'query'=>[
- 
+
               'id'=>$id,
                 'owner'=>$owner,
               'title'=>$title,
@@ -492,7 +492,7 @@ class UpdateProductController extends Controller
              'phoneNumber'=>$result['phoneNumber']
 
          ]);
-        
+
         $req->session()->flash('success', session('message'));
         // dd($result);
         // return view('showProducts');
@@ -511,7 +511,7 @@ class UpdateProductController extends Controller
 
        public function updateElectronicPost(Request $req){
       $validator = Validator::make($req->all(), [
- 
+
             'title'=>['required', 'string', 'max:75'],
             'type'=>['required', 'string'],
             'brand'=>['required', 'string'],
@@ -531,7 +531,7 @@ class UpdateProductController extends Controller
         $http = new \GuzzleHttp\Client;
 
         if($req->hasFile('image')){
-        
+
         if ($req->file('image')->isValid()) {
             $image = $req->file('image');
             $destinationPath = 'public';
@@ -557,10 +557,10 @@ class UpdateProductController extends Controller
         $owner = Session::get('id');
         $phoneNumber = Session::get('phoneNumber');
 
-        $response = $http->post('http://127.0.0.1:8000/api/update/electronic/$id',[
+        $response = $http->post(env('API_URL').'/api/update/electronic/$id',[
 
             'query'=>[
- 
+
               'id'=>$id,
                 'owner'=>$owner,
               'title'=>$title,
@@ -594,7 +594,7 @@ class UpdateProductController extends Controller
              'phoneNumber'=>$result['phoneNumber']
 
          ]);
-        
+
         $req->session()->flash('success', session('message'));
         // dd($result);
         // return view('showProducts');

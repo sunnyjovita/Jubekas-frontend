@@ -19,7 +19,7 @@ class CarsController extends Controller
     {
 
 
-        $cars = Http::get('http://127.0.0.1:8000/api/cars')->json();
+        $cars = Http::get(env('API_URL').'/api/cars')->json();
         // dd($cars);
         return view('cars',['cars'=>$cars]);
 
@@ -30,7 +30,7 @@ class CarsController extends Controller
 
 
         // $carsdetails = Http::get('http://127.0.0.1:8000/api/cars/details/'.$id);
-        $carsdetails = Http::get("http://127.0.0.1:8000/api/cars/details/$id");
+        $carsdetails = Http::get(env('API_URL')."/api/cars/details/$id");
         $result = json_decode((string)$carsdetails->getBody(), true);
         // return $result;
 
@@ -45,7 +45,7 @@ class CarsController extends Controller
         $input = $data['query'];
 //        $input = $req->query();
 
-        $response = Http::get("http://127.0.0.1:8000/api/search?query=$input");
+        $response = Http::get(env('API_URL')."/api/search?query=$input");
 
         $result = json_decode((string)$response->getBody(), true);
         // return $response;

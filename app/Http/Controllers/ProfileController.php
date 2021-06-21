@@ -21,14 +21,14 @@ class ProfileController extends Controller
         else{
             return redirect('/login');
         }
-// 
+//
     }
 
 
     public function products($id){
          if(Session::has('email')){
 
-        $result = Http::get("http://127.0.0.1:8000/api/user-profile/products/$id")->json();
+        $result = Http::get(env('API_URL')."/api/user-profile/products/$id")->json();
         // return view('cars',['cars'=>$cars]);
         // dd($result);
 
@@ -49,7 +49,7 @@ class ProfileController extends Controller
     }
 
     public function updateProfile(){
-        
+
          if(Session::has('email')){
             return view('profile.updateProfile');
         }
@@ -73,7 +73,7 @@ class ProfileController extends Controller
 
 
         try{
-            
+
         $http = new \GuzzleHttp\Client;
 
         // fetch data for API
@@ -82,12 +82,12 @@ class ProfileController extends Controller
         $email = $req->email;
         $phoneNumber = $req->phoneNumber;
 
-        $response = $http->post('http://127.0.0.1:8000/api/update-profile?',[
+        $response = $http->post(env('API_URL').'/api/update-profile?',[
             'query'=>[
                 'id'=>$id,
                 'name'=>$name,
                 'email'=>$email,
-                'phoneNumber'=>$phoneNumber 
+                'phoneNumber'=>$phoneNumber
             ]
         ]);
 
@@ -107,7 +107,7 @@ class ProfileController extends Controller
         return view('profile.user-profile');
         // return redirect('/user-profile');
 
-       
+
 
         }catch(\Exception $e){
             // dd($e);
@@ -116,7 +116,7 @@ class ProfileController extends Controller
             // return redirect('/');
             // return redirect()->back()->with($error);
 
-        } 
+        }
     }
 
 

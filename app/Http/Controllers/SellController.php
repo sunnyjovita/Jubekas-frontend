@@ -21,7 +21,7 @@ class SellController extends Controller
     	 if(Session::has('email')){
     	 	return view('category.sellCategory');
             // return redirect('sell-category');
-        }else{	
+        }else{
             return redirect('login');
         }
     }
@@ -29,16 +29,16 @@ class SellController extends Controller
     public function Car(){
     	if(Session::has('email')){
     	 	return view('sell.sellCar');
-        }else{	
+        }else{
             return redirect('login');
         }
-    	
+
     }
 
     public function Clothes(){
         if(Session::has('email')){
             return view('sell.sellClothes');
-        }else{  
+        }else{
             return redirect('login');
         }
     }
@@ -47,7 +47,7 @@ class SellController extends Controller
         if(Session::has('email')){
             return view('sell.sellFurniture');
             // return redirect('sell-category');
-        }else{  
+        }else{
             return redirect('login');
         }
     }
@@ -56,7 +56,7 @@ class SellController extends Controller
         if(Session::has('email')){
             return view('sell.sellElectronics');
             // return redirect('sell-category');
-        }else{  
+        }else{
             return redirect('login');
         }
     }
@@ -65,7 +65,7 @@ class SellController extends Controller
         if(Session::has('email')){
             return view('sell.sellProperty');
             // return redirect('sell-category');
-        }else{  
+        }else{
             return redirect('login');
         }
     }
@@ -86,15 +86,15 @@ class SellController extends Controller
 
 		if($validator->fails()){
  			$req->session()->flash('error', 'Invalid Input');
-            return view('sell.sellCar');		
+            return view('sell.sellCar');
         }
 
         try{
-            
+
         $http = new \GuzzleHttp\Client;
 
         if($req->hasFile('image')){
-        
+
         if ($req->file('image')->isValid()) {
             $image = $req->file('image');
             $destinationPath = 'public';
@@ -124,7 +124,7 @@ class SellController extends Controller
         $owner = Session::get('id');
         $phoneNumber = Session::get('phoneNumber');
 
-        $response = $http->post('http://127.0.0.1:8000/api/post/car?',[
+        $response = $http->post(env('API_URL').'/api/post/car?',[
 
             'query'=>[
                 'owner'=>$owner,
@@ -162,7 +162,7 @@ class SellController extends Controller
             return view('sell.sellCar');
             // return $e;
             // dd($e);
-        } 
+        }
     }
 
     public function PostFurniture(Request $req){
@@ -181,15 +181,15 @@ class SellController extends Controller
             // dd($validator);
             // return 'error';
             $req->session()->flash('error', 'Invalid input');
-            return view('sell.sellFurniture');        
+            return view('sell.sellFurniture');
         }
 
         try{
-            
+
         $http = new \GuzzleHttp\Client;
 
         if($req->hasFile('image')){
-        
+
         if ($req->file('image')->isValid()) {
             $image = $req->file('image');
             $destinationPath = 'public';
@@ -222,7 +222,7 @@ class SellController extends Controller
         // return $location;
         // return $image;
 
-        $response = $http->post('http://127.0.0.1:8000/api/post/furniture?',[
+        $response = $http->post(env('API_URL').'/api/post/furniture?',[
 
             'query'=>[
 
@@ -251,7 +251,7 @@ class SellController extends Controller
          ]);
 
         $req->session()->flash('success', 'Product successfuly added');
-    
+
         return view('sell.sellFurniture');
 
         }catch(\Exception $e){
@@ -259,13 +259,13 @@ class SellController extends Controller
              $req->session()->flash('success', 'Product successfuly added');
             return view('sell.SellFurniture');
 
-        } 
+        }
     }
 
     public function PostElectronic(Request $req){
 
         $validator = Validator::make($req->all(), [
- 
+
             'title'=>['required', 'string', 'max:75'],
             'type'=>['required', 'string'],
             'brand'=>['required', 'string'],
@@ -280,15 +280,15 @@ class SellController extends Controller
             // dd($validator);
             // return 'error';
             $req->session()->flash('error', 'Invalid input');
-            return view('sell.sellElectronics');        
+            return view('sell.sellElectronics');
         }
 
         try{
-            
+
         $http = new \GuzzleHttp\Client;
 
         if($req->hasFile('image')){
-        
+
         if ($req->file('image')->isValid()) {
             $image = $req->file('image');
             $destinationPath = 'public';
@@ -316,9 +316,9 @@ class SellController extends Controller
         $phoneNumber = Session::get('phoneNumber');
         $location = $req->location;
         $description = $req->description;
-     
 
-        $response = $http->post('http://127.0.0.1:8000/api/post/electronic?',[
+
+        $response = $http->post(env('API_URL').'/api/post/electronic?',[
 
             'query'=>[
 
@@ -348,7 +348,7 @@ class SellController extends Controller
          ]);
 
         $req->session()->flash('success', 'Product successfuly added');
-    
+
         return view('sell.sellElectronics');
 
         }catch(\Exception $e){
@@ -360,7 +360,7 @@ class SellController extends Controller
          //    return redirect('/');
          //    return redirect()->back()->with($error);
 
-        } 
+        }
     }
     public function PostClothes(Request $req){
 
@@ -378,15 +378,15 @@ class SellController extends Controller
             // dd($validator);
             // return 'error';
             $req->session()->flash('error', 'Invalid input');
-            return view('sell.sellClothes');        
+            return view('sell.sellClothes');
         }
 
         try{
-            
+
         $http = new \GuzzleHttp\Client;
 
         if($req->hasFile('image')){
-        
+
         if ($req->file('image')->isValid()) {
             $image = $req->file('image');
             $destinationPath = 'public';
@@ -419,7 +419,7 @@ class SellController extends Controller
         // return $location;
         // return $image;
 
-        $response = $http->post('http://127.0.0.1:8000/api/post/clothes?',[
+        $response = $http->post(env('API_URL').'/api/post/clothes?',[
 
             'query'=>[
 
@@ -449,14 +449,14 @@ class SellController extends Controller
          ]);
 
         $req->session()->flash('success', 'Product successfuly added');
-    
+
         return view('sell.sellClothes');
 
         }catch(\Exception $e){
             // dd($e);
             return $e;
 
-        } 
+        }
     }
 
     public function PostProperty(Request $req){
@@ -475,22 +475,22 @@ class SellController extends Controller
             'price'=>['required', 'string'],
             'description'=>['required', 'string'],
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-          
+
         ]);
 
         if($validator->fails()){
             // dd($validator);
             // return $validator;
             $req->session()->flash('error', 'Invalid input');
-            return view('sell.sellProperty');        
+            return view('sell.sellProperty');
         }
 
         try{
-            
+
         $http = new \GuzzleHttp\Client;
 
         if($req->hasFile('image')){
-        
+
         if ($req->file('image')->isValid()) {
             $image = $req->file('image');
             $destinationPath = 'public';
@@ -531,14 +531,14 @@ class SellController extends Controller
         // return $location;
         // return $image;
 
-        $response = $http->post('http://127.0.0.1:8000/api/post/property?',[
+        $response = $http->post(env('API_URL').'/api/post/property?',[
 
             'query'=>[
 
                 'owner'=>$owner,
                 'title'=>$title,
                 'type'=>$type,
-                'landSize'=>$landSize, 
+                'landSize'=>$landSize,
                 'buildingSize'=>$buildingSize,
                 'address'=>$address,
                 'bedrooms'=>$bedrooms,
@@ -568,18 +568,18 @@ class SellController extends Controller
          ]);
 
         $req->session()->flash('success', 'Product successfuly added');
-    
+
         return view('sell.sellProperty');
 
         }catch(\Exception $e){
             // dd($e);
             return $e;
-        } 
+        }
     }
 
-  
 
 
-  
+
+
 
 }

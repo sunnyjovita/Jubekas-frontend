@@ -15,7 +15,7 @@ class ElectronicController extends Controller
      public function electronic()
     {
 
-        $electronic = Http::get('http://127.0.0.1:8000/api/electronic')->json();
+        $electronic = Http::get(env('API_URL').'/api/electronic')->json();
 
         return view('product.Electronic',['electronic'=>$electronic]);
 
@@ -23,10 +23,10 @@ class ElectronicController extends Controller
      public function details($id){
 
 
-        
-        $electronicdetails = Http::get("http://127.0.0.1:8000/api/electronic/details/$id");
+
+        $electronicdetails = Http::get(env('API_URL')."/api/electronic/details/$id");
         $result = json_decode((string)$electronicdetails->getBody(), true);
-        
+
         return view('product.ElectronicDetails', ['electronic'=>$electronicdetails]);
     }
 }

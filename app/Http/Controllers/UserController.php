@@ -48,7 +48,7 @@ class UserController extends Controller
         }
     }
 
-    
+
 
     function loginPost(Request $req)
     {
@@ -65,33 +65,33 @@ class UserController extends Controller
         }
 
         try{
-            
+
         $http = new \GuzzleHttp\Client;
 
         // fetch data from API
         $email = $req->email;
         $password = $req->password;
 
-        $response = $http->post('http://127.0.0.1:8000/api/login?',[
+        $response = $http->post(env('API_URL').'/api/login?',[
             'headers' =>[
                 'Authorization' => 'Bearer'.session()->get('token.access_token')
             ],
             'query'=>[
                 'email'=>$email,
-                'password'=>$password 
+                'password'=>$password
             ]
         ]);
 
         $result = json_decode((string)$response->getBody(), true);
 
         // return dd($result);
-        // session([ 
+        // session([
         //    'token' => $result['token'],
         //     'name' => $result['name'],
         //      'phoneNumber' => $result['phoneNumber'],
         //       'email' => $result['email'],
-           
-           
+
+
         //  ]);
 
         session()->put([
@@ -120,14 +120,14 @@ class UserController extends Controller
             // $req->session()->flash('error', 'Invalid Email or Password');
             // return view('login');
         // }else{
-        
+
         // return redirect('/');
         // $user = Http::post('http://127.0.0.1:8000/api/cars');
         // return view('/', ['user'=>$user]);
 
         // $req->session()->put('user');
         // return view('/');
-        
+
 
             // return redirect('/');
                 // return view('/');
@@ -141,8 +141,8 @@ class UserController extends Controller
             // return redirect('/');
             // return redirect()->back()->with($error);
 
-        } 
-    
+        }
+
 }
 
 
@@ -164,8 +164,8 @@ class UserController extends Controller
             $req->session()->flash('error', 'Invalid input');
     //         // return view('login');
             return view('register');
-    } 
-  
+    }
+
         else if($req->input('password') != $req->input('confirmPassword')){
             $req->session()->flash('error', 'Password and Confirm Password are not same');
             return view('register');
@@ -182,7 +182,7 @@ class UserController extends Controller
         }
     }
         try{
-            
+
         $http = new \GuzzleHttp\Client;
 
         // fetch data from API
@@ -192,7 +192,7 @@ class UserController extends Controller
         $password = $req->password;
         $confirmPassword = $req->confirmPassword;
 
-        $response = $http->post('http://127.0.0.1:8000/api/register?',[
+        $response = $http->post(env('API_URL').'/api/register?',[
             'headers' =>[
                 'Authorization' => 'Bearer'.session()->get('token.access_token')
             ],
@@ -209,13 +209,13 @@ class UserController extends Controller
         // return dd($result);
         return redirect('login');
 
-      
+
 
         }catch(\Exception $e){
-  
+
                 $req->session()->flash('error', 'Invalid Input');
                 return view('register');
-       
+
         }
     }
 
@@ -239,21 +239,21 @@ class UserController extends Controller
         }
     }
 
-    
+
 }
 
-           
-
-    
-
-    
 
 
 
 
-    
 
-    
+
+
+
+
+
+
+
 //     function login(){
 //         return User::all();
 //         // return view('login');
@@ -263,7 +263,7 @@ class UserController extends Controller
 
 //     function PostLogin(Request $req)
 //     {
-        
+
 //     	$user = User::where(['email'=>$req->email])->first();
 //      //    // return $user->password;
 //         if(!$user || !Hash::check($req->password, $user->password)){
@@ -273,7 +273,7 @@ class UserController extends Controller
 
 //             // api
 //             return response()->json(['error' => 'Unauthorized.'], 401);
-                        
+
 //         }
 //         else{
 //      //        //if password and email are correct
@@ -289,18 +289,18 @@ class UserController extends Controller
 //             // $user = session()->get('user');
 //             // return response()->json($user->name);
 //             // return $user->name;
-           
+
 
 //             // api
 //             $success['api_token'] = $user->api_token;
 //             $success['name'] = $user->name;
 //             return response()->json([$success, 'User login successfully']);
-//      }       
+//      }
 // }
 
 //     function header(Request $req){
 //         return response()->json(auth()->user());
-        
+
 //     }
 
 
@@ -311,11 +311,11 @@ class UserController extends Controller
 //         //     return "sorry";
 //         // }
 //         // else{
-//         //     return redirect('login');        
+//         //     return redirect('login');
 //         // }
 
 //          if(empty($req->input('name') || $req->input('email') || $req->input('phoneNumber') || $req->input('password'))) {
-       
+
 //             // $req->session()->flash('error', 'Invalid input');
 //             // return view('login');
 //             // return view('register');
@@ -324,7 +324,7 @@ class UserController extends Controller
 //             return response()->json(['error' => 'Invalid Input.'], 401);
 
 //             // return 'invalid input';
-//                 } 
+//                 }
 //     else{
 //         $validateEmail = User::where(['email'=>$req->email])->first();
 
@@ -356,7 +356,7 @@ class UserController extends Controller
 //         }
 //         else{
 //             $user = new User;
-        
+
 //             $user->name=$req->name;
 //             $user->email=$req->email;
 //             $user->phoneNumber=$req->phoneNumber;
@@ -370,17 +370,17 @@ class UserController extends Controller
 
 //             $success['api_token'] = $user->api_token;
 //             $success['name'] = $user->name;
-            
+
 
 //             return response()->json([$success, 'User registered successfully']);
-         
-     
+
+
 //     }
 //         }
 
 //     }
 
-    
+
 
 // }
 

@@ -41,14 +41,14 @@ class ForgotPasswordController extends Controller
         }
 
         try{
-            
+
         $http = new \GuzzleHttp\Client;
 
         // fetch data from API
         $email = $req->email;
 
-        $response = $http->post('http://127.0.0.1:8000/api/forgot-password?',[
-            
+        $response = $http->post(env('API_URL').'/api/forgot-password?',[
+
             'query'=>[
                 'email'=>$email,
 
@@ -73,7 +73,7 @@ class ForgotPasswordController extends Controller
         }
         // return redirect('forgot-password');
         return view('forgot-password');
-       
+
 
 
         }
@@ -83,7 +83,7 @@ class ForgotPasswordController extends Controller
 
             // return $e;
 
-        } 
+        }
 
 
     }
@@ -103,8 +103,8 @@ class ForgotPasswordController extends Controller
             $req->session()->flash('error', 'Invalid input');
     //         // return view('login');
             return view('ResetPassword');
-    } 
-        
+    }
+
         else if($req->input('password') != $req->input('ConfirmPassword')){
             $req->session()->flash('error', 'Password and confirm password are not match');
             return view('ResetPassword');
@@ -120,8 +120,8 @@ class ForgotPasswordController extends Controller
             $ConfirmPassword = $req->ConfirmPassword;
 
 
-            $response = $http->post("http://127.0.0.1:8000/api/reset-password/$token?",[
-                
+            $response = $http->post(env('API_URL')."/api/reset-password/$token?",[
+
                 'query'=>[
                     'password'=>$password,
                     'ConfirmPassword'=>$ConfirmPassword
@@ -129,13 +129,13 @@ class ForgotPasswordController extends Controller
                 ]
             ]);
 
-            
+
 
             $result = json_decode((string)$response->getBody(), true);
-            
+
 
             $req->session()->flash('success', 'Congratulations! Your password has been changed successfully.');
-        
+
             return redirect('login');
 
 
@@ -147,8 +147,8 @@ class ForgotPasswordController extends Controller
                 return view('ResetPassword');
 
             }
-        
-            
+
+
 
 
 

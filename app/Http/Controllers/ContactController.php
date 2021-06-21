@@ -43,7 +43,7 @@ class ContactController extends Controller
         }
 
         try{
-            
+
         $http = new \GuzzleHttp\Client;
 
         // fetch data for API
@@ -51,8 +51,8 @@ class ContactController extends Controller
         $name = $req->name;
         $message = $req->message;
 
-        $response = $http->post('http://127.0.0.1:8000/api/contact-us?',[
-            
+        $response = $http->post(env('API_URL').'/api/contact-us?',[
+
             'query'=>[
                 'email'=>$email,
                 'name'=>$name,
@@ -77,7 +77,7 @@ class ContactController extends Controller
         else{
             $req->session()->flash('success', session('message'));
             $response = $http->post('https://script.google.com/macros/s/AKfycbzvjZYv1JZgvnMOQBzvsdV2mC3yavIN3kTXUnrETv0YGgVwy0A9/exec',[
-            
+
             'query'=>[
                 'email'=>$email,
                 'name'=>$name,
@@ -87,8 +87,8 @@ class ContactController extends Controller
         ]);
         }
 
-        
-        return view('contact.contact-us', ['name'=>session('name'), 'message'=>session('message')]);       
+
+        return view('contact.contact-us', ['name'=>session('name'), 'message'=>session('message')]);
 
 
         }
@@ -99,7 +99,7 @@ class ContactController extends Controller
 
 
 
-        } 
+        }
     }
 
 

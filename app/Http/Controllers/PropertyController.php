@@ -15,7 +15,7 @@ class PropertyController extends Controller
      public function property()
     {
 
-        $property = Http::get('http://127.0.0.1:8000/api/property')->json();
+        $property = Http::get(env('API_URL').'/api/property')->json();
 
         return view('product.Property',['property'=>$property]);
 
@@ -23,10 +23,10 @@ class PropertyController extends Controller
      public function details($id){
 
 
-        
-        $propertydetails = Http::get("http://127.0.0.1:8000/api/property/details/$id");
+
+        $propertydetails = Http::get(env('API_URL')."/api/property/details/$id");
         $result = json_decode((string)$propertydetails->getBody(), true);
-        
+
         return view('product.PropertyDetails', ['property'=>$propertydetails]);
     }
 }
