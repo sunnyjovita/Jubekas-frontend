@@ -244,6 +244,7 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
             </div>
         </div>
     </div>
+    </div>
 </section>
 
 <section class="shop-method-area spad ">
