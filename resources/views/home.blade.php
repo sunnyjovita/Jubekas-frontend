@@ -9,7 +9,7 @@
     <meta name="viewport" content="width-device-width, initial-scale=1">
     <title>Jubekas</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
@@ -40,8 +40,8 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
                 <div class="categories_item categories_large_item">
                     <img src="/web app project new/images/porsche.webp" alt="" class="img-fluid ">
                     <div class="categories_text">
-                        <h1>Cars</h1> 
-                    
+                        <h1>Cars</h1>
+
                         <a href="/cars">Buy Now</a>
                     </div>
                 </div>
@@ -53,7 +53,7 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
                             <img src="/web app project new/images/furniture2.jpg" alt="" class="img-fluid">
                             <div class="categories_text">
                                 <h4>Furniture</h4>
-                              
+
                                 <a href="/furniture">Buy Now</a>
                             </div>
                         </div>
@@ -63,7 +63,7 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
                             <img src="/web app project new/images/clothes.jpg" alt="" class="img-fluid">
                             <div class="categories_text">
                                 <h4>Clothes</h4>
-                               
+
                                 <a href="/clothes">Buy Now</a>
                             </div>
                         </div>
@@ -73,7 +73,7 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
                             <img src="/web app project new/images/property.jpg" alt="" class="img-fluid">
                             <div class="categories_text">
                                 <h4>Property</h4>
-                              
+
                                 <a href="/property">Buy Now</a>
                             </div>
                         </div>
@@ -83,22 +83,22 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
                             <img src="/web app project new/images/electronics2.jpg" alt="" class="img-fluid">
                             <div class="categories_text">
                                 <h4>Electronics</h4>
-                             
+
                                 <a href="/electronics">Buy Now</a>
                             </div>
                         </div>
-                    </div> 
+                    </div>
                 </div>
-            </div>           
+            </div>
         </div>
     </div>
 </section>
 <section class="product spad">
-    <div class="conatiner">
+    <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
                 <div class="section-title">
-                    <h4>Our Product</h4> 
+                    <h4>Our Product</h4>
                 </div>
             </div>
         </div>
@@ -107,14 +107,16 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
             @foreach($cars as $item)
   <div class="trending-item">
     <a href="cars/details/{{$item['id']}}">
-        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">
+        <img class="trending-image" style="width: 180px; height:180px;" src="{{ asset('storage/'.$item['image']) }}" onerror="this.onerror=null;
+                    this.src='http://127.0.0.1:8001/storage/public/noimage.jpg';" />
+{{--        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">--}}
         <div class="trending-image">
           <h2 style="font-size: 25px">{{ Str::words($item['title'],'3','...') }}</h2>
           <h5 style="color: black">{{$item['price']}}</h5>
         </div>
       </a>
   </div>
-  @endforeach 
+  @endforeach
 
   @foreach($property as $item)
   <div class="trending-item">
@@ -131,14 +133,16 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
     @foreach($clothes as $item)
   <div class="trending-item">
     <a href="clothes/details/{{$item['id']}}">
-        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">
+        <img class="trending-image" style="width: 180px; height:180px;" src="{{ asset('storage/'.$item['image']) }}" onerror="this.onerror=null;
+                    this.src='http://127.0.0.1:8001/storage/public/noimage.jpg';" />
+{{--        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">--}}
         <div class="trending-image">
            <h2 style="font-size: 25px">{{ Str::words($item['title'],'3','...') }}</h2>
           <h5 style="color: black">{{$item['price']}}</h5>
         </div>
       </a>
   </div>
-  @endforeach 
+  @endforeach
 
     @foreach($furniture as $item)
   <div class="trending-item">
@@ -150,18 +154,20 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
         </div>
       </a>
   </div>
-  @endforeach 
+  @endforeach
     @foreach($electronic as $item)
   <div class="trending-item">
     <a href="electronics/details/{{$item['id']}}">
-        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">
+        <img class="trending-image" style="width: 180px; height:180px;" src="{{ asset('storage/'.$item['image']) }}" onerror="this.onerror=null;
+                    this.src='http://127.0.0.1:8001/storage/public/noimage.jpg';" />
+{{--        <img class="trending-image" src="{{ asset('storage/'.$item['image']) }}" style="width: 180px; height:180px;">--}}
         <div class="trending-image">
           <h2 style="font-size: 25px">{{ Str::words($item['title'],'3','...') }}</h2>
           <h5 style="color: black">{{$item['price']}}</h5>
         </div>
       </a>
   </div>
-  @endforeach 
+  @endforeach
             </div>
         </div>
     </div>
@@ -211,14 +217,14 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
             </div>
         </div>
     </div>
-</section> 
+</section>
 
  <section class="discount spad">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 p-0 ">
                 <div class="discount_pic">
-                    <img src="/web app project new/images/discount.jpg" class="img-fluid">   
+                    <img src="/web app project new/images/discount.jpg" class="img-fluid">
                 </div>
             </div>
             <div class="col-lg-6 p-0 ">
@@ -277,7 +283,7 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
             </p>
             <div class="row subscribe-sec">
                 <div class="col-md-9">
-                    
+
                 </div>
             </div>
         </form>
@@ -288,13 +294,13 @@ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQV
 <!-- jQuery Library -->
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- Popper JS -->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <!-- compiled Javascript -->
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!-- owl carousel -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
  <!-- javascript -->
-<script type="text/javascript" src="/web app project new/main.js"></script> 
+<script type="text/javascript" src="/web app project new/main.js"></script>
 
 </body>
 </html>

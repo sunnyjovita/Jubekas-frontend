@@ -7,7 +7,7 @@
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/web app project new/product_detail.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
@@ -18,8 +18,33 @@
 <div class="small-container single-product">
     <div class="row">
         <div class="col-2">
+{{--        @php--}}
+{{--            $image = asset('storage/'.$cars['image']);--}}
+{{--           @if($cars['image']!= '' && file_exists(public_path($cars['image'])) )--}}
+{{--            @if(asset('storage/'.$cars['image']) == null)--}}
+{{--                        {{dd(public_path(asset('storage/'.$cars['image'])))}}--}}
+{{--            <img class="detail-img" style="width: 350px" src="/web app project new/images/login.png" alt="" width="100%">--}}
+{{--            @else--}}
+{{--            <img src="/web app project new/images/login.png">--}}
+{{--                <img class="detail-img" style="width: 350px" src="{{ asset('storage/'.$cars['image']) }}" alt="" width="100%">--}}
+
+{{--               $image = {{asset('storage/public/404.jpg')}};--}}
+{{--           @endif--}}
+{{--        @endphp--}}
+
+{{--            <img src="{{ asset($image) }}" alt="image of product" >--}}
+{{--            {{ dd(isset($cars['image'])) }}--}}
+{{--            {{dd($cars)}}--}}
             <!-- <img src="images/mercedes.webp" width="100%"> -->
-              <img class="detail-img" style="width: 350px" src="{{ asset('storage/'.$cars['image']) }}" alt="" width="100%">
+{{--              <img class="detail-img" style="width: 350px" src="{{ asset('storage/'.$cars['image']) }}" alt="" width="100%">--}}
+{{--            <img class="detail-img" style="width: 350px" src="{{ $image }}" alt="" width="100%">--}}
+{{--                <img class="detail-img" style="width: 350px" src="/storage/public/404.jpg" alt="" width="100%">--}}
+    <img class="detail-img" style="width: 350px" alt="" width="100%" src="{{ asset('storage/'.$cars['image']) }}" onerror="this.onerror=null;
+                    this.src='http://127.0.0.1:8001/storage/public/noimage.jpg';" />
+
+
+
+
 
         </div>
         <div class="col-2">
@@ -36,7 +61,7 @@
 
               @if(Session::has('name'))
              @if($cars['owner'] == Session::get('id'))
-               
+
                  <a class="btn btn-primary" href="/update/car/{{$cars['id']}}">Edit</a>
                    @else
                      <a class="btn btn-primary" target="_blank" href="https://wa.me/{{$cars['phoneNumber']}}">Chat Seller</a>
