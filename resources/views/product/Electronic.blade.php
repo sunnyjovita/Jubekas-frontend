@@ -8,13 +8,13 @@
    <meta name="viewport" content="width-device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" type="text/css" href="/web app project new/style.css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  
+
 
 
 
@@ -42,10 +42,10 @@
       @foreach($electronic as $item)
 
       <div class="item {{$item['id']==1?'active':''}}">
-              <a href="electronic/details/{{$item['id']}}">
+              <a href="electronics/details/{{$item['id']}}">
         <img src="{{ asset('storage/'.$item['image']) }}" style="display:block; margin-left:auto; margin-right: auto; width: 30%; height:300px;">
         <div class="carousel-caption">
-          
+
           <!-- <h3>{{$item['title']}}</h3> -->
           <h3>{{ Str::words($item['title'],'3','...') }}</h3>
           <p>{{$item['condition']}}</p>
@@ -54,7 +54,7 @@
       </a>
       </div>
       @endforeach
-  
+
     </div>
 
     <!-- Left and right controls -->
@@ -83,7 +83,7 @@
         </div>
       </a>
   </div>
-  @endforeach 
+  @endforeach
 
 </div>
 <!-- </form> -->
