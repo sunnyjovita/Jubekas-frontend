@@ -12,16 +12,16 @@ use Redirect;
 class DeleteController extends Controller
 {
     //
-    public function deleteCars($id){
+    public function deleteCars($id, Request $req){
 
     	$cars = Http::delete(env('API_URL')."api/delete/car/$id");
 
         // $id = Session::get('id');
-        // $req->session()->flash('success', 'successfully deleted ur product');
+         $req->session()->flash('success', 'successfully deleted ur product');
 
-        // return view('profile.user-profile');
-        return redirect()->to('user-profile/products/'.$id);
-        // return view('cars',['cars'=>$cars]);
+//         return view('profile.user-profile');
+//        return redirect()->to('user-profile/products/'.$id);
+         return view('profile.user-profile',['cars'=>$cars]);
 
 
     }
