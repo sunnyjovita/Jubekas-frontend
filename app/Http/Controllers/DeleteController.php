@@ -29,7 +29,7 @@ class DeleteController extends Controller
     public function deleteClothes($id){
     	$clothes = Http::delete(env('API_URL')."api/delete/clothes/$id");
 
-        // $id = Session::get('id');
+         $id = Session::get('id');
          // $req->session()->flash('success', 'successfully deleted ur product');
         // return view('profile.user-profile');
         return redirect()->to('user-profile/products/'.$id);
